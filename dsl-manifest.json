@@ -1,0 +1,150 @@
+{
+  "$schema": "https://wellmanifest.dev/schemas/dsl-manifest/v1",
+  "schema": "wellmanifest.dsl/manifest/v1",
+  "id": "autogrammar.intract",
+  "name": "Intract Intent Contract DSL",
+  "version": "0.5.14",
+  "status": "stable",
+  "purpose": "Intent-contract layer for codebases and software delivery artifacts — describe, validate and monitor intent across code, files, manifests, CI/CD, and DevOps artifacts",
+  "domain": "intent-contracts",
+  "owners": [
+    {
+      "kind": "repository",
+      "id": "github:autogrammar/intract",
+      "responsibilities": ["semantics", "validation", "compatibility", "runtime", "security"]
+    }
+  ],
+  "source": {
+    "repository": "https://github.com/autogrammar/intract",
+    "path": "schemas/intract.schema.json",
+    "declaredVersion": "1",
+    "canonical": "json-ast",
+    "mediaType": "application/schema+json",
+    "selectors": []
+  },
+  "ownedPaths": [
+    "dsl-manifest.json",
+    "schemas/intract.schema.json",
+    "README.md",
+    "docs/contract-format.md",
+    "docs/intent-yaml.md"
+  ],
+  "artifacts": [
+    {
+      "path": "schemas/intract.schema.json",
+      "role": "normative-source",
+      "digest": "sha256:2bd34166d2452fd323bfc806ba76999bc79df9d215a1a20e9f5c3efa96b5cfb3"
+    },
+    {
+      "path": "README.md",
+      "role": "documentation",
+      "digest": "sha256:e7110fa8d750ab6f032eb5d7e56d568903c499aa1d97e510bb4f309ad202b84a"
+    }
+  ],
+  "namespaces": [
+    {
+      "prefix": "intract",
+      "uri": "https://github.com/autogrammar/intract/"
+    }
+  ],
+  "projections": [
+    {
+      "name": "Comment annotation",
+      "mediaType": "text/x-python",
+      "direction": "from-canonical",
+      "lossless": false
+    },
+    {
+      "name": "Decorator annotation",
+      "mediaType": "text/x-rust",
+      "direction": "from-canonical",
+      "lossless": false
+    },
+    {
+      "name": "YAML manifest",
+      "mediaType": "application/yaml",
+      "direction": "bidirectional",
+      "lossless": true
+    }
+  ],
+  "lifecycle": {
+    "compatibility": "semver",
+    "stability": "stable",
+    "breaking": "major",
+    "additive": "minor",
+    "fix": "patch"
+  },
+  "semantics": {
+    "effectModel": "declarative-policy",
+    "unknownPolicy": "reject",
+    "authoritySchema": null
+  },
+  "llm": {
+    "mode": "none",
+    "requestSchemas": [],
+    "responseSchemas": [],
+    "naturalLanguage": "forbidden",
+    "sourceSchema": null,
+    "modelAuthority": "none",
+    "strict": true
+  },
+  "documentation": {
+    "vocabularyKind": "documents",
+    "commandRoot": "docs",
+    "errorRoot": "docs/ERROR",
+    "criticalRoot": "docs/CRITICAL",
+    "commands": [],
+    "errorCodes": [],
+    "criticalCodes": []
+  },
+  "findingPolicy": {
+    "schema": "wellmanifest.dsl/findings/v1",
+    "requiredProducers": ["autogrammar.intract.governance-check"],
+    "securityProducers": ["autogrammar.intract.governance-check"],
+    "blockingSeverities": ["critical"],
+    "requireEvaluable": true,
+    "blockUnresolvedSecurity": true
+  },
+  "publicationPolicy": {
+    "declaredTier": "review",
+    "deterministic": true,
+    "independentReview": true,
+    "externalAuthority": false,
+    "runtimeIsolation": false
+  },
+  "conformance": {
+    "levels": ["manifest", "contract"],
+    "commands": ["python -m pytest tests/"],
+    "validExamples": [],
+    "invalidExamples": []
+  },
+  "mappings": [
+    {
+      "standard": "wellmanifest.dsl",
+      "version": "0.1.0",
+      "relation": "implements",
+      "uri": "https://github.com/wellmanifest/dsl"
+    }
+  ],
+  "standardsLock": {
+    "schema": "wellmanifest.standards-lock/v1",
+    "entries": [
+      {
+        "standard": "wellmanifest.dsl",
+        "version": "0.1.0",
+        "repository": "https://github.com/wellmanifest/dsl",
+        "revision": "b7d0595c95e5abbb48ebfdbdae0bc6d43c6f82f4",
+        "contracts": [
+          {
+            "ref": "https://wellmanifest.dev/schemas/dsl-manifest/v1",
+            "digest": "sha256:34d356b76bbd483372df84bb986e15bb84e9c1f8b11b7dc9e3a6c7276c85ed13"
+          },
+          {
+            "ref": "https://wellmanifest.dev/spec/DSL_STANDARD.md",
+            "digest": "sha256:2dfb09b5689289c3ad096057ca1dc2f19512639e3662188dd6c5ee25e4e8c53b"
+          }
+        ]
+      }
+    ]
+  }
+}
