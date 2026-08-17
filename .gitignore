@@ -314,3 +314,8 @@ site/public/artifacts/*.exe
 .github/
 .intract/
 .vscode/
+
+# Koru/planfile runtime artifacts
+.koru/
+.nlp2dsl/
+.planfile/
