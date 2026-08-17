@@ -46,7 +46,27 @@ def test_validate_project_on_full_stack():
     )
     payload = json.loads(raw)
     assert payload["success"] is True
+    assert payload.get("empty") is False
     assert payload["report"]["status"] == "pass"
+
+
+def test_validate_project_empty_is_not_success(tmp_path):
+    raw = TOOL_HANDLERS["validate_project"]({"path": str(tmp_path)})
+    payload = json.loads(raw)
+    assert payload["success"] is False
+    assert payload["empty"] is True
+    assert payload["report"]["status"] == "unknown"
+    assert payload["report"]["summary"]["total"] == 0
+    assert "message" in payload
+
+
+def test_validate_project_missing_path_is_not_success(tmp_path):
+    missing = tmp_path / "does-not-exist"
+    raw = TOOL_HANDLERS["validate_project"]({"path": str(missing)})
+    payload = json.loads(raw)
+    assert payload["success"] is False
+    assert payload["empty"] is True
+    assert payload["report"] is None
 
 
 def test_tools_call_routes_handler():

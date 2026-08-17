@@ -35,9 +35,37 @@ def _resolve_manifest(root: Path, params: dict[str, Any]) -> Path | None:
 
 def handle_validate_project(params: dict[str, Any]) -> str:
     root = _resolve_path(params)
+    if not root.exists():
+        return json.dumps(
+            {
+                "success": False,
+                "empty": True,
+                "message": f"Project path does not exist: {root}",
+                "report": None,
+            },
+            indent=2,
+            ensure_ascii=False,
+        )
     manifest = _resolve_manifest(root, params)
     report = validate_project(root, manifest_path=manifest)
-    return json.dumps({"success": True, "report": report.to_dict()}, indent=2, ensure_ascii=False)
+    report_dict = report.to_dict()
+    status = str(report_dict.get("status") or "unknown")
+    total = int((report_dict.get("summary") or {}).get("total") or 0)
+    empty = total == 0 or status == "unknown"
+    # Fail closed: do not advertise success when no contracts were found/validated.
+    success = (not empty) and status == "pass"
+    payload: dict[str, Any] = {
+        "success": success,
+        "empty": empty,
+        "report": report_dict,
+    }
+    if empty:
+        payload["message"] = (
+            "No Intract contracts found or validation status is unknown"
+        )
+    elif status != "pass":
+        payload["message"] = f"Project validation status is {status}"
+    return json.dumps(payload, indent=2, ensure_ascii=False)
 
 
 def handle_validate_staged(params: dict[str, Any]) -> str:
