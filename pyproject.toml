@@ -27,7 +27,6 @@ dependencies = ["pyyaml>=6.0", "typer>=0.12.0", "rich>=13.0"]
 dev = ["pytest>=7.0", "ruff>=0.4", "mypy>=1.8",
     "goal>=2.1.0",
     "costs>=0.1.20",
-    "pfix>=0.1.60",
 ]
 llm = ["litellm>=1.0"]
 watch = ["watchdog>=4.0"]
@@ -70,22 +69,6 @@ input_presence = "intract.validators.input_output:InputPresenceRule"
 output_presence = "intract.validators.input_output:OutputPresenceRule"
 return_value = "intract.validators.input_output:ReturnValueRule"
 no_forbidden_effect = "intract.validators.effects:NoForbiddenEffectRule"
-
-[tool.pfix]
-# Self-healing Python configuration
-model = "openrouter/qwen/qwen3-coder-next"
-auto_apply = true
-auto_install_deps = true
-auto_restart = false
-max_retries = 3
-create_backups = false
-git_auto_commit = false
-
-[tool.pfix.runtime_todo]
-enabled = true
-todo_file = "TODO.md"
-min_severity = "low"
-deduplicate = true
 
 [tool.costs]
 # AI Cost tracking configuration
