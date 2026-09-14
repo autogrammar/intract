@@ -82,3 +82,11 @@ max_commits = 500
 
 # Cost thresholds for badge colors (USD)
 badge_color_thresholds = { low = 1.0, medium = 5.0, high = 10.0, critical = 50.0 }
+
+[tool.intract]
+# Intentional negative fixtures; examples/* CI steps validate them explicitly.
+ignore = [
+  "examples/markdown-generator/violation/**",
+  "examples/web-app/iterations/v2-violation/**",
+  "examples/integration_tests/*_violation_*/**",
+]
