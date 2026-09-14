@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from collections.abc import Sequence
+from fnmatch import fnmatchcase
 from pathlib import Path
 
 from intract.core.artifact import ArtifactKind, infer_artifact_kind
@@ -34,10 +36,31 @@ EXTRA_ARTIFACT_KINDS = frozenset({ArtifactKind.DOCKERFILE})
 SKIP_DIRS = {".git", ".venv", "venv", "__pycache__", "node_modules", "dist", "build"}
 
 
+def is_ignored(rel_path: str, ignore: Sequence[str]) -> bool:
+    """Return True when a project-relative POSIX path matches a configured ignore pattern.
+
+    Patterns use ``fnmatch`` semantics on the whole relative path, so ``*`` also
+    crosses directory separators (``examples/*/violation/*``). A pattern ending in
+    ``/`` or ``/**`` ignores everything below that directory.
+    """
+    for pattern in ignore:
+        normalized = pattern.strip()
+        if not normalized:
+            continue
+        if normalized.endswith("/**"):
+            normalized = normalized[:-3]
+        if normalized.endswith("/"):
+            normalized = normalized[:-1]
+        if fnmatchcase(rel_path, normalized) or fnmatchcase(rel_path, f"{normalized}/*"):
+            return True
+    return False
+
+
 def load_project_sources(
     root: Path,
     *,
     extensions: tuple[str, ...] = DEFAULT_EXTENSIONS,
+    ignore: Sequence[str] = (),
 ) -> dict[str, str]:
     sources: dict[str, str] = {}
     for path in root.rglob("*"):
@@ -46,6 +69,8 @@ def load_project_sources(
         if any(part in SKIP_DIRS for part in path.parts):
             continue
         rel_path = str(path.relative_to(root))
+        if ignore and is_ignored(path.relative_to(root).as_posix(), ignore):
+            continue
         if path.suffix not in extensions:
             try:
                 preview = path.read_text(encoding="utf-8")
@@ -132,9 +157,14 @@ def validate_sources(sources: dict[str, str], *, manifest_records=None) -> Proje
     return ProjectReport(project_path="<sources>", status=_project_status(results), results=results)
 
 
-def validate_project(root: Path | str, *, manifest_path: Path | str | None = None) -> ProjectReport:
+def validate_project(
+    root: Path | str,
+    *,
+    manifest_path: Path | str | None = None,
+    ignore: Sequence[str] = (),
+) -> ProjectReport:
     project_root = Path(root)
-    sources = load_project_sources(project_root)
+    sources = load_project_sources(project_root, ignore=ignore)
     manifest_records = []
     
     if manifest_path:

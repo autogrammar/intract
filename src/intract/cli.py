@@ -209,7 +209,7 @@ def check(
         report, files = changed_check(path, base_ref=base, manifest=manifest_path)
         report.project_path = str(path)
     else:
-        report = validate_project(path, manifest_path=manifest_path)
+        report = validate_project(path, manifest_path=manifest_path, ignore=tuple(config.ignore))
 
     graph = None
     if manifest_path and any(token in config.fail_on for token in ("missing_required_p1",)):
