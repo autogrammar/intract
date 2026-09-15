@@ -30,9 +30,9 @@ stale `IN_PROGRESS` reserved the `core` workstream.
 ## Acceptance criteria
 
 - [x] AC-01: `load_project_sources` excludes files under `.worktrees/` and `.subactor/` at any depth (covered by `tests/test_project_ignore.py`).
-- [ ] AC-02: full test suite passes.
-- [ ] AC-03: `python -m intract check .` on a checkout containing `.worktrees/` and `.subactor/` reports no results from those trees.
-- [ ] AC-04: `./project/governance-check.sh` passes on the published head.
+- [x] AC-02: full test suite passes (94 tests).
+- [x] AC-03: `python -m intract check .` on a checkout containing `.worktrees/` and `.subactor/` reports no results from those trees (0 of 43 results on the dirty primary checkout).
+- [x] AC-04: `./project/governance-check.sh` passes on the published head (GOV-PASS, 0 errors).
 
 ## Participants
 
