@@ -11,4 +11,5 @@ This file indexes governance tickets without taking ownership of
 | **ticket-003** | [`README.md`](./ticket-003/README.md) | [`preprompt.md`](./ticket-003/preprompt.md) | - |  [`ai-claude.md`](./ticket-003/ai-claude.md) |  [`ai-claude-logs.txt`](./ticket-003/ai-claude-logs.txt) | [`changelog.md`](./ticket-003/changelog.md) |
 | **ticket-004** | [`README.md`](./ticket-004/README.md) | [`preprompt.md`](./ticket-004/preprompt.md) | - |  [`ai-devin.md`](./ticket-004/ai-devin.md) |  [`ai-devin-logs.txt`](./ticket-004/ai-devin-logs.txt) | [`changelog.md`](./ticket-004/changelog.md) |
 | **ticket-005** | [`README.md`](./ticket-005/README.md) | [`preprompt.md`](./ticket-005/preprompt.md) | - |  [`ai-claude.md`](./ticket-005/ai-claude.md) |  [`ai-claude-logs.txt`](./ticket-005/ai-claude-logs.txt) | [`changelog.md`](./ticket-005/changelog.md) |
+| **ticket-006** | [`README.md`](./ticket-006/README.md) | [`preprompt.md`](./ticket-006/preprompt.md) | - |  [`ai-devin.md`](./ticket-006/ai-devin.md) |  [`ai-devin-logs.txt`](./ticket-006/ai-devin-logs.txt) | [`changelog.md`](./ticket-006/changelog.md) |
 <!-- AUTO:TICKET_INDEX:END -->

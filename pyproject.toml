@@ -47,9 +47,15 @@ target-version = "py310"
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B"]
 
+[tool.wellmanifest]
+standard = "0.20.32"
+revision = "b6ba9c21a65a6a5648ecf904b64c3b75295e136f"
+gate = "project/governance-check.sh"
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-pythonpath = ["src"]
+pythonpath = ["src", "."]
+addopts = "-p wellmanifest_governance"
 
 
 [project.entry-points."intract.parsers"]

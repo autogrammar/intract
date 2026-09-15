@@ -311,7 +311,9 @@ site/public/artifacts/*.msi
 site/public/artifacts/*.exe
 .agents/
 .codex/
-.github/
+.github/*
+!.github/workflows/
+!.github/copilot-instructions.md
 .intract/
 .vscode/
 
@@ -319,3 +321,16 @@ site/public/artifacts/*.exe
 .koru/
 .nlp2dsl/
 .planfile/
+
+# Repository-local worktrees and operational state
+/.worktrees/
+/.subactor/leases/
+/.subactor/sessions/
+/.subactor/recovery/
+/.subactor/receipts/
+/.subactor/cache/
+/.subactor/snapshots/
+
+# koru runtime artefacts (generated)
+.planfile/.koru/
+.planfile/sprints/*.bak-*

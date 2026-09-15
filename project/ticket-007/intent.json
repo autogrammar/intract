@@ -1,0 +1,162 @@
+{
+  "schema": "new-project.intent/v3",
+  "ticket": "ticket-007",
+  "summary": "Adopt git-derived ticket lifecycle",
+  "workstream": "governance",
+  "classification": {
+    "kind": "SERVICE",
+    "priority": "P2",
+    "origin": "requested"
+  },
+  "allowedPaths": [
+    "project/ticket-007/**",
+    "project/ticket-001/**",
+    "TODO.md",
+    "project/TICKETS.md",
+    ".gitignore",
+    ".governance/**",
+    "pyproject.toml",
+    ".github/copilot-instructions.md",
+    ".github/workflows/new-project-governance.yml",
+    ".githooks/pre-commit",
+    ".cursor/rules/new-project-standard.mdc",
+    ".aider.conf.yml",
+    "AGENTS.md",
+    "CLAUDE.md",
+    "GEMINI.md",
+    "project/new-ticket.sh",
+    "project/governance-check.sh",
+    "project/governance-check.bat",
+    "project.bat",
+    "scripts/install-agent-hosts.sh",
+    "scripts/runtime.sh",
+    "wellmanifest_governance.py",
+    "worktree-guard.yaml",
+    "Dockerfile",
+    "Dockerfile.e2e",
+    ".subactor/.gitignore",
+    ".subactor/manifest.json"
+  ],
+  "forbiddenPaths": [
+    "project/ticket-*/user-*.md"
+  ],
+  "stacks": [],
+  "dependsOn": [],
+  "conflictsWith": [],
+  "integrationTicket": null,
+  "delivery": {
+    "acceptedBaseSha": "9bdcddcaa28bcb50a71c9ee0a377bc1301f1aa60",
+    "targetBranch": "main",
+    "standardAdoption": {
+      "sourceRepository": "wellmanifest/new-project",
+      "fromRevision": "a22eb47ca0e7c06ac927d1c0d843eabb798bfadd",
+      "toRevision": "b6ba9c21a65a6a5648ecf904b64c3b75295e136f",
+      "managedTargetRestorations": [
+        {
+          "path": "project/governance-check.bat",
+          "baseDigest": "2f0091eba580c0a24b5d1a127fb82963521a4b8512ff9d3b85e679b66b5e361c"
+        },
+        {
+          "path": "scripts/runtime.sh",
+          "baseDigest": "8d5c91808d3c126fc84018a12f0b39dd49194fb8b01c5e024932ff9cf2a7a7e2"
+        }
+      ]
+    },
+    "outcome": "Upgrade adopted governance pack 0.14.0 -> 0.20.32 and enable git-ancestry ticket activity so tickets delivered on main release workstream slots.",
+    "nonGoals": [
+      "No intract source or test changes",
+      "No deletion of unmerged or dirty work",
+      "No fabricated approval or merge receipt"
+    ],
+    "complexity": "L",
+    "estimatedMinutes": 90,
+    "budgets": {
+      "maxImplementationFiles": 15,
+      "maxAffectedComponents": 5,
+      "maxPublicInterfaceChanges": 3,
+      "maxRuntimeDependencies": 0
+    },
+    "architecture": {
+      "status": "accepted",
+      "decision": "Use Goal immutable atomic adoption of the published 0.20.32 pack; add a target-owned ticket-activity override selecting git-ancestry; record delivery in the terminal-receipt registry instead of rewriting historical ticket README statuses.",
+      "components": [
+        {
+          "name": "governance-instance",
+          "paths": [
+            ".governance/**",
+            "project/**",
+            "project/ticket-007/**",
+            "project.bat",
+            "TODO.md",
+            "project/TICKETS.md"
+          ]
+        },
+        {
+          "name": "managed-runtime",
+          "paths": [
+            ".githooks/**",
+            ".github/**",
+            ".gitignore",
+            ".subactor/**",
+            ".aider.conf.yml",
+            ".cursor/**",
+            "AGENTS.md",
+            "CLAUDE.md",
+            "GEMINI.md",
+            "scripts/**",
+            "wellmanifest_governance.py",
+            "worktree-guard.yaml"
+          ]
+        },
+        {
+          "name": "packaging",
+          "paths": [
+            "pyproject.toml",
+            "Dockerfile",
+            "Dockerfile.e2e"
+          ]
+        }
+      ],
+      "responsibilityChanges": false,
+      "interfaceChanges": [],
+      "dataChanges": [],
+      "ui": {
+        "impact": "none",
+        "states": [],
+        "evidence": []
+      },
+      "rollback": "Revert adoption commit; preserve external receipts and original history."
+    },
+    "runtimeDependencies": [],
+    "validation": [
+      {
+        "criterion": "AC-01",
+        "commands": [
+          "goal governance adopt --source-revision b6ba9c21a65a6a5648ecf904b64c3b75295e136f --check"
+        ],
+        "evidence": "Adoption applied pack 0.20.32; manifest.lock.json standard binding verified."
+      },
+      {
+        "criterion": "AC-02",
+        "commands": [
+          "cat .governance/ticket-activity.override.json"
+        ],
+        "evidence": "Override selects missingPolicy git-ancestry."
+      },
+      {
+        "criterion": "AC-03",
+        "commands": [
+          "python3 .governance/ticket_activity.py --root . --ticket ticket-001"
+        ],
+        "evidence": "Resolver reports delivered tickets inactive via git-ancestry (delivery-on-target)."
+      },
+      {
+        "criterion": "AC-04",
+        "commands": [
+          "./project/governance-check.sh"
+        ],
+        "evidence": "GOV-PASS 0 errors 0 warnings."
+      }
+    ]
+  }
+}
