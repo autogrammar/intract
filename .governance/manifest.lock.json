@@ -26,7 +26,12 @@
     ".governance/work-classification.dsl.json": "3a947c41938c0b8ef1717957f313ff9248764252735182de30b1f2d6878748b6",
     ".governance/work-classification.schema.json": "f5c2b518238543589e4f8d3805cc6455e19d6919643644aaeae034abf472a467",
     "AGENTS.md": "9437506d6d7ce9b5b938cc550de3aa869f680542688a1d9c92754d030b2ff8d3",
+    "project.bat": "d699ec9930b8895b03e75446561ec0561f4a46e067ef19ba968231db6185ffb2",
+    "project.sh": "91b84f15766f6dc74f67229f6eae616620e573fcfbc1f43164369f199f86f874",
+    "project/governance-check.bat": "2f0091eba580c0a24b5d1a127fb82963521a4b8512ff9d3b85e679b66b5e361c",
     "project/governance-check.sh": "158ca61531b8e51ba484de8eb6f91f4e4fbba908ae3c8db678b63bf6bab49923",
-    "project/new-ticket.sh": "92c5cb880a3b3e83567c88fbc293e24d3d81cefa420667e38e71c9db661e3cdb"
+    "project/new-ticket.sh": "92c5cb880a3b3e83567c88fbc293e24d3d81cefa420667e38e71c9db661e3cdb",
+    "project/readme.sh": "b41a9c88374e6de0439284a4561fb11b1b482039bc5ba1bcf6683fd59b1a3968",
+    "scripts/runtime.sh": "8d5c91808d3c126fc84018a12f0b39dd49194fb8b01c5e024932ff9cf2a7a7e2"
   }
 }
