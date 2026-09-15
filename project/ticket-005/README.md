@@ -2,8 +2,9 @@
 
 - **ID**: ticket-005
 - **Owner**: unresolved:human
-- **Status**: IN_PROGRESS
-- **Workflow state**: VALIDATION
+- **Status**: DONE
+- **Workflow state**: DONE
+- **Delivered**: merged via PR #2 (`7cbf55e`); implementation `c954d07`, plan `ffa7d24`; `main` self-check green since 2026-09-14T20:01Z
 - **Session execution authorization**: user requested autonomous execution of publication-blocker fixes (2026-09-14)
 - **Created**: 2026-09-14
 
