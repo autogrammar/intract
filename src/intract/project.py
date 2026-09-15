@@ -33,7 +33,7 @@ DEFAULT_EXTENSIONS = (
     ".yml",
 )
 EXTRA_ARTIFACT_KINDS = frozenset({ArtifactKind.DOCKERFILE})
-SKIP_DIRS = {".git", ".venv", "venv", "__pycache__", "node_modules", "dist", "build"}
+SKIP_DIRS = {".git", ".venv", "venv", "__pycache__", "node_modules", "dist", "build", ".worktrees", ".subactor"}
 
 
 def is_ignored(rel_path: str, ignore: Sequence[str]) -> bool:
@@ -66,10 +66,11 @@ def load_project_sources(
     for path in root.rglob("*"):
         if not path.is_file():
             continue
-        if any(part in SKIP_DIRS for part in path.parts):
+        rel = path.relative_to(root)
+        if any(part in SKIP_DIRS for part in rel.parts):
             continue
-        rel_path = str(path.relative_to(root))
-        if ignore and is_ignored(path.relative_to(root).as_posix(), ignore):
+        rel_path = str(rel)
+        if ignore and is_ignored(rel.as_posix(), ignore):
             continue
         if path.suffix not in extensions:
             try:

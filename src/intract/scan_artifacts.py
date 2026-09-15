@@ -6,7 +6,7 @@ from pathlib import Path
 from intract.core.artifact import ArtifactKind, infer_artifact_kind
 from intract.validators.artifacts import ArtifactValidationReport, validate_artifact
 
-SKIP_DIRS = {".git", ".venv", "venv", "__pycache__", "node_modules", "dist", "build", ".intract", ".pyqual"}
+SKIP_DIRS = {".git", ".venv", "venv", "__pycache__", "node_modules", "dist", "build", ".intract", ".pyqual", ".worktrees", ".subactor"}
 ARTIFACT_KINDS = {
     ArtifactKind.OPENAPI,
     ArtifactKind.DOCKERFILE,
@@ -46,13 +46,14 @@ def discover_artifact_paths(root: str | Path) -> list[Path]:
     for path in root.rglob("*"):
         if not path.is_file():
             continue
-        if any(part in SKIP_DIRS for part in path.parts):
+        rel = path.relative_to(root)
+        if any(part in SKIP_DIRS for part in rel.parts):
             continue
         try:
             content = path.read_text(encoding="utf-8")
         except (UnicodeDecodeError, OSError):
             continue
-        kind = infer_artifact_kind(str(path.relative_to(root)), content)
+        kind = infer_artifact_kind(str(rel), content)
         if kind in ARTIFACT_KINDS:
             found.append(path)
 

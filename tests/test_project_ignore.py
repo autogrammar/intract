@@ -52,6 +52,24 @@ def test_validate_project_excludes_ignored_violation(tmp_path: Path) -> None:
     assert not any("violation" in path for path in filtered_files if path)
 
 
+def test_load_project_sources_skips_agent_state_dirs(tmp_path: Path) -> None:
+    root = _project(tmp_path)
+    for state_dir in (".worktrees/ticket-001--x", ".subactor"):
+        nested = root / state_dir
+        nested.mkdir(parents=True)
+        (nested / "auth.py").write_text(VIOLATION, encoding="utf-8")
+    sources = load_project_sources(root)
+    assert "ok.py" in sources
+    assert not any(path.startswith((".worktrees/", ".subactor/")) for path in sources)
+
+
+def test_load_project_sources_scans_checkout_nested_under_worktrees(tmp_path: Path) -> None:
+    root = _project(tmp_path / ".worktrees" / "ticket-009--x" / "checkout")
+    sources = load_project_sources(root)
+    assert "ok.py" in sources
+    assert "examples/negative/violation/auth.py" in sources
+
+
 def test_check_command_honors_pyproject_ignore(tmp_path: Path) -> None:
     root = _project(tmp_path)
     runner = CliRunner()
