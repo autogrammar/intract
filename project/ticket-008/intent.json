@@ -1,0 +1,44 @@
+{
+  "schema": "new-project.intent/v3",
+  "ticket": "ticket-008",
+  "summary": "refresh generated project analysis",
+  "workstream": "governance",
+  "classification": {
+    "kind": "SERVICE",
+    "priority": "P2",
+    "origin": "requested"
+  },
+  "allowedPaths": [
+    "project/ticket-008/**",
+    "TODO.md",
+    "project/TICKETS.md",
+    ".governance/manifest.json",
+    ".env.example",
+    ".github/workflows/planfile-github-sync.yml",
+    "project/README.md",
+    "project/analysis.toon.yaml",
+    "project/calls.mmd",
+    "project/calls.png",
+    "project/calls.toon.yaml",
+    "project/calls.yaml",
+    "project/compact_flow.mmd",
+    "project/compact_flow.png",
+    "project/context.md",
+    "project/evolution.toon.yaml",
+    "project/flow.mmd",
+    "project/flow.png",
+    "project/index.html",
+    "project/map.toon.yaml",
+    "project/mermaid.export",
+    "project/planfile-tickets.yaml",
+    "project/project.toon.yaml",
+    "project/prompt.txt"
+  ],
+  "forbiddenPaths": [
+    "project/ticket-*/user-*.md"
+  ],
+  "stacks": [],
+  "dependsOn": [],
+  "conflictsWith": [],
+  "integrationTicket": null
+}

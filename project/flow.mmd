@@ -1,25 +1,25 @@
 flowchart TD
-%% generated in 0.03s
+%% generated in 0.07s
 
     %% Entry points (blue)
     classDef entry fill:#4dabf7,stroke:#1971c2,color:#fff
 
     subgraph Core
         src__intract__config__IntractConfig__from_mapping["from_mapping"]
-        src__intract__cli__main["main"]
-        src__intract__cli__init["init"]
-        src__intract__cli___print_artifact_scan_report["_print_artifact_scan_report"]
-        src__intract__cli___scan_artifacts["_scan_artifacts"]
-        src__intract__cli___is_scan_candidate["_is_scan_candidate"]
-        src__intract__cli___scan_contract_file["_scan_contract_file"]
-        src__intract__cli___scan_inline_records["_scan_inline_records"]
-        src__intract__cli___scan_row["_scan_row"]
-        src__intract__cli___print_scan_table["_print_scan_table"]
-        src__intract__cli__scan["scan"]
-        src__intract__cli__validate["validate"]
-        src__intract__cli__check["check"]
-        src__intract__cli__coverage["coverage"]
-        src__intract__cli__duplicates["duplicates"]
+        src__intract__project__extract_signatures_from_sources["extract_signatures_from_source"]
+        src__intract__project__validate_sources["validate_sources"]
+        src__intract__project__validate_project["validate_project"]
+        src__intract__proposals__ProposedContract__to_dict["to_dict"]
+        src__intract__proposals__propose_ui_delta_contract_dicts["propose_ui_delta_contract_dict"]
+        src__intract__coverage__CoverageReport__to_dict["to_dict"]
+        src__intract__check__ChangedHunk__to_dict["to_dict"]
+        src__intract__check__validate_selected_paths("validate_selected_paths CC=8")
+        src__intract__check__staged_check["staged_check"]
+        src__intract__scan_artifacts__ArtifactScanReport__to_dict["to_dict"]
+        src__intract__graph__ContractGraph__to_dict["to_dict"]
+        src__intract__graph__ContractGraph__to_mermaid["to_mermaid"]
+        src__intract__sdk__ContractBuilder__to_inline["to_inline"]
+        src__intract__sdk__contract["contract"]
         ...["+162 more"]
     end
 
@@ -32,4 +32,4 @@ flowchart TD
         src__intract__integrations__planfile_adapter__PlanfileApiAdapter__export_local["export_local"]
     end
 
-    class src__intract__config__IntractConfig__from_mapping,src__intract__cli__main,src__intract__cli__init,src__intract__cli___print_artifact_scan_report,src__intract__cli___scan_artifacts,src__intract__cli___is_scan_candidate,src__intract__cli___scan_contract_file,src__intract__cli___scan_inline_records,src__intract__cli___scan_row,src__intract__cli___print_scan_table entry
+    class src__intract__config__IntractConfig__from_mapping,src__intract__proposals__ProposedContract__to_dict,src__intract__proposals__propose_ui_delta_contract_dicts,src__intract__coverage__CoverageReport__to_dict,src__intract__check__ChangedHunk__to_dict,src__intract__scan_artifacts__ArtifactScanReport__to_dict,src__intract__graph__ContractGraph__to_dict,src__intract__graph__ContractGraph__to_mermaid,src__intract__sdk__ContractBuilder__to_inline,src__intract__sdk__contract entry

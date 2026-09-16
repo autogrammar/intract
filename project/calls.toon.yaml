@@ -1,5 +1,5 @@
-# code2llm call graph | /home/tom/github/semcod/intract
-# generated in 0.15s
+# code2llm call graph | /home/tom/github/autogrammar/intract
+# generated in 0.31s
 # nodes: 329 | edges: 378 | modules: 65
 # CC̄=3.5
 
@@ -16,34 +16,34 @@ HUBS[20]:
     CC=6  in:17  out:10  total:27
   src.intract.parsers.inline.parse_contract_line
     CC=13  in:4  out:21  total:25
-  src.intract.integrations.planfile.tickets_from_report
-    CC=11  in:3  out:21  total:24
   scripts.generate_toon_from_map.generate_toon_lines
     CC=6  in:1  out:23  total:24
+  src.intract.integrations.planfile.tickets_from_report
+    CC=11  in:3  out:21  total:24
+  src.intract.integrations.planfile_adapter._ticket_from_dict
+    CC=2  in:2  out:21  total:23
   src.intract.core.signatures._normalize_contract
     CC=2  in:1  out:22  total:23
   src.intract.graph.build_graph
     CC=9  in:5  out:18  total:23
-  src.intract.integrations.planfile_adapter._ticket_from_dict
-    CC=2  in:2  out:21  total:23
   src.intract.integrations.nexu._base_intent_contract
     CC=2  in:2  out:21  total:23
   src.intract.parsers.inline.clean_comment_line
     CC=12  in:2  out:20  total:22
   src.intract.cli.engine_drift
     CC=4  in:0  out:21  total:21
-  src.intract.validators.artifacts.validate_artifact
-    CC=9  in:3  out:17  total:20
-  src.intract.cli.engine_run
-    CC=4  in:0  out:20  total:20
   src.intract.parsers.toon._contract_from_uri
     CC=1  in:1  out:19  total:20
+  src.intract.cli.engine_run
+    CC=4  in:0  out:20  total:20
+  src.intract.validators.artifacts.validate_artifact
+    CC=9  in:3  out:17  total:20
   src.intract.validators.engine.validate_contract_against_source
     CC=8  in:5  out:14  total:19
-  src.intract.cli.engine_suggest
-    CC=3  in:0  out:18  total:18
-  src.intract.config.load_config
-    CC=11  in:4  out:14  total:18
+  examples.integration_tests.run_examples.run_example_03
+    CC=2  in:1  out:17  total:18
+  src.intract.engine.analyzer.analyze_source_units
+    CC=12  in:1  out:17  total:18
 
 MODULES:
   examples.integration_tests.run_examples  [6 funcs]
@@ -281,11 +281,11 @@ MODULES:
     handle_validate_project  CC=1  out:5
     handle_validate_staged  CC=4  out:11
   src.intract.mcp.server  [5 funcs]
-    handle_initialize  CC=1  out:0
-    handle_request  CC=5  out:6
+    handle_initialize  CC=2  out:1
+    handle_request  CC=6  out:6
     handle_tools_call  CC=4  out:2
     handle_tools_list  CC=2  out:1
-    run_server  CC=5  out:14
+    run_server  CC=6  out:14
   src.intract.parsers.inline  [14 funcs]
     _add_relation  CC=2  out:2
     _apply_key_value_pair  CC=1  out:2
@@ -398,32 +398,6 @@ MODULES:
     watch_tree  CC=7  out:10
 
 EDGES:
-  examples.markdown-generator.demo._validate_project → src.intract.project.validate_project
-  examples.markdown-generator.demo.main → examples.markdown-generator.demo._load_pass_generator
-  examples.markdown-generator.demo.main → examples.markdown-generator.demo._validate_project
-  examples.markdown-generator.pass.generator.generate_markdown_document → examples.markdown-generator.pass.generator.normalize_topic
-  examples.markdown-generator.pass.generator.generate_markdown_document → examples.markdown-generator.pass.generator.build_markdown_outline
-  examples.markdown-generator.pass.generator.generate_markdown_document → examples.markdown-generator.pass.generator.render_markdown_sections
-  examples.markdown-generator.pass.generator.generate_markdown_document → examples.markdown-generator.pass.generator.guard_markdown_contract
-  examples.markdown-generator.violation.generator.generate_markdown_document → examples.markdown-generator.violation.generator.normalize_topic
-  examples.markdown-generator.violation.generator.generate_markdown_document → examples.markdown-generator.violation.generator.build_markdown_outline
-  examples.markdown-generator.violation.generator.generate_markdown_document → examples.markdown-generator.violation.generator.render_markdown_sections
-  examples.markdown-generator.violation.generator.generate_markdown_document → examples.markdown-generator.violation.generator.guard_markdown_contract
-  examples.showcase.server.resolve_runtime_config → examples.showcase.server.load_env_file
-  examples.showcase.server.ShowcaseHandler.do_GET → examples.showcase.server.resolve_runtime_config
-  examples.showcase.server.ShowcaseHandler.do_POST → examples.showcase.server.resolve_runtime_config
-  examples.integration_tests.run_examples.run_example_01 → src.intract.project.validate_project
-  examples.integration_tests.run_examples.run_example_02 → src.intract.project.validate_project
-  examples.integration_tests.run_examples.run_example_02 → src.intract.integrations.planfile.tickets_from_report
-  examples.integration_tests.run_examples.run_example_03 → src.intract.watch.snapshot_tree
-  examples.integration_tests.run_examples.run_example_03 → src.intract.watch.diff_snapshots
-  examples.integration_tests.run_examples.run_example_03 → src.intract.engine.monitor.scan_suggest_and_validate
-  examples.integration_tests.run_examples.run_example_04 → src.intract.project.validate_project
-  examples.integration_tests.run_examples.main → examples.integration_tests.run_examples.run_example_01
-  examples.integration_tests.run_examples.main → examples.integration_tests.run_examples.run_example_02
-  examples.integration_tests.run_examples.main → examples.integration_tests.run_examples.run_example_03
-  examples.integration_tests.run_examples.main → examples.integration_tests.run_examples.run_example_04
-  examples.integration_tests.run_examples.main → examples.integration_tests.run_examples.print_result
   src.intract.propose_llm.propose_contracts_llm → src.intract.propose_llm._load_litellm_completion
   src.intract.propose_llm.propose_contracts_llm → src.intract.propose_llm._resolve_model
   src.intract.propose_llm.propose_contracts_llm → src.intract.propose_llm._resolve_api_key
@@ -431,20 +405,46 @@ EDGES:
   src.intract.propose_llm.propose_contracts_llm → src.intract.propose_llm._strip_markdown_fence
   src.intract.propose_llm.propose_contracts_llm → src.intract.propose_llm._json_line_strings
   src.intract.propose_llm.propose_contracts_llm → src.intract.propose_llm._lines_to_proposals
-  src.intract.watch.snapshot_tree → src.intract.watch.should_scan
-  src.intract.watch.snapshot_tree → src.intract.watch.hash_file
-  src.intract.watch.watch_tree → src.intract.watch.snapshot_tree
-  src.intract.watch.watch_tree → src.intract.watch.diff_snapshots
-  src.intract.cli.init → src.intract.parsers.manifest.create_sample_manifest
-  src.intract.cli._scan_artifacts → src.intract.scan_artifacts.scan_all_artifacts
-  src.intract.cli._scan_artifacts → src.intract.cli._print_artifact_scan_report
-  src.intract.cli._scan_contract_file → src.intract.parsers.inline.extract_contract_records_from_text
-  src.intract.cli._scan_inline_records → src.intract.cli._scan_contract_file
-  src.intract.cli._scan_inline_records → src.intract.cli._is_scan_candidate
-  src.intract.cli.scan → src.intract.cli._print_scan_table
-  src.intract.cli.scan → src.intract.cli._scan_artifacts
-  src.intract.cli.scan → src.intract.cli._scan_row
-  src.intract.cli.scan → src.intract.cli._scan_inline_records
-  src.intract.cli.validate → src.intract.project.validate_project
-  src.intract.cli.validate → src.intract.cli._print_validation_report
-  src.intract.cli.validate → src.intract.cli._export_tickets
+  src.intract.project.load_project_sources → src.intract.core.artifact.infer_artifact_kind
+  src.intract.project.extract_signatures_from_sources → src.intract.core.signatures.build_signatures
+  src.intract.project.extract_signatures_from_sources → src.intract.parsers.inline.extract_contract_records_from_text
+  src.intract.project._validate_observed_signatures → src.intract.validators.engine.validate_contract_against_source
+  src.intract.project._validate_manifest_signature → src.intract.validators.requirements.validate_required_contracts
+  src.intract.project._validate_manifest_signature → src.intract.validators.engine.validate_contract_against_source
+  src.intract.project._validate_manifest_signatures → src.intract.project._validate_manifest_signature
+  src.intract.project._validate_manifest_signatures → src.intract.core.signatures.build_signatures
+  src.intract.project.validate_sources → src.intract.project.extract_signatures_from_sources
+  src.intract.project.validate_sources → src.intract.project._validate_observed_signatures
+  src.intract.project.validate_sources → src.intract.project._validate_manifest_signatures
+  src.intract.project.validate_sources → src.intract.project._project_status
+  src.intract.project.validate_project → src.intract.project.load_project_sources
+  src.intract.project.validate_project → src.intract.project.validate_sources
+  src.intract.project.validate_project → src.intract.parsers.toon.load_toon_records
+  src.intract.project.validate_project → src.intract.parsers.manifest.load_manifest_records
+  src.intract.proposals.propose_ui_delta_contract_dicts → src.intract.proposals.propose_ui_delta_contracts
+  src.intract.coverage.calculate_coverage → src.intract.project.load_project_sources
+  src.intract.coverage.calculate_coverage → src.intract.project.extract_signatures_from_sources
+  src.intract.check._fallback_block_extent → src.intract.check._is_python_declaration
+  src.intract.check._fallback_block_extent → src.intract.check._is_fallback_preamble
+  src.intract.check.block_extent → src.intract.check._language_block_extent
+  src.intract.check.block_extent → src.intract.check._fallback_block_extent
+  src.intract.check.signature_touched → src.intract.check.block_extent
+  src.intract.check.validate_sources_for_hunks → src.intract.check.load_selected_sources
+  src.intract.check.validate_sources_for_hunks → src.intract.check.changed_lines_by_file
+  src.intract.check.validate_sources_for_hunks → src.intract.parsers.inline.extract_contract_records_from_text
+  src.intract.check.validate_sources_for_hunks → src.intract.validators.engine.validate_contract_against_source
+  src.intract.check.validate_sources_for_hunks → src.intract.core.signatures.build_signatures
+  src.intract.check.validate_selected_paths → src.intract.check.load_selected_sources
+  src.intract.check.validate_selected_paths → src.intract.project.validate_sources
+  src.intract.check.validate_selected_paths → src.intract.project.validate_project
+  src.intract.check.validate_selected_paths → src.intract.parsers.manifest.load_manifest_records
+  src.intract.check.staged_check → src.intract.git.staged_files
+  src.intract.check.staged_check → src.intract.git.paths_from_changes
+  src.intract.check.staged_check → src.intract.git.staged_hunks
+  src.intract.check.staged_check → src.intract.check.parse_unified_diff_hunks
+  src.intract.check.staged_check → src.intract.check._manifest_changed
+  src.intract.check.staged_check → src.intract.check.validate_selected_paths
+  src.intract.check.staged_check → src.intract.check.validate_sources_for_hunks
+  src.intract.check.changed_check → src.intract.git.changed_files
+  src.intract.check.changed_check → src.intract.git.paths_from_changes
+  src.intract.check.changed_check → src.intract.check._manifest_changed

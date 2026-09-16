@@ -1,64 +1,64 @@
 flowchart LR
-%% generated in 0.03s
+%% generated in 0.07s
     subgraph examples__integration_tests
-        examples__integration_tests__run_examples__run_example_03["run_example_03"]
-        examples__integration_tests__run_examples__main["main"]
-        examples__integration_tests__run_examples__print_result["print_result"]
-        examples__integration_tests__run_examples__run_example_04["run_example_04"]
         examples__integration_tests__run_examples__run_example_01["run_example_01"]
+        examples__integration_tests__run_examples__main["main"]
+        examples__integration_tests__run_examples__run_example_03["run_example_03"]
+        examples__integration_tests__run_examples__run_example_04["run_example_04"]
+        examples__integration_tests__run_examples__print_result["print_result"]
         examples__integration_tests__run_examples__run_example_02["run_example_02"]
     end
     subgraph examples__markdown_generator
-        examples__markdown_generator__pass__generator__guard_markdown_contract["guard_markdown_contract"]
-        examples__markdown_generator__violation__generator__generate_markdown_document["generate_markdown_document"]
-        examples__markdown_generator__demo___load_pass_generator["_load_pass_generator"]
-        examples__markdown_generator__pass__generator__generate_markdown_document["generate_markdown_document"]
-        examples__markdown_generator__pass__generator__render_markdown_sections["render_markdown_sections"]
-        examples__markdown_generator__demo__main["main"]
-        examples__markdown_generator__violation__generator__normalize_topic["normalize_topic"]
-        examples__markdown_generator__pass__generator__normalize_topic["normalize_topic"]
-        examples__markdown_generator__demo___validate_project["_validate_project"]
-        examples__markdown_generator__violation__generator__render_markdown_sections["render_markdown_sections"]
-        examples__markdown_generator__violation__generator__guard_markdown_contract["guard_markdown_contract"]
         examples__markdown_generator__pass__generator__build_markdown_outline["build_markdown_outline"]
+        examples__markdown_generator__violation__generator__generate_markdown_document["generate_markdown_document"]
+        examples__markdown_generator__pass__generator__generate_markdown_document["generate_markdown_document"]
+        examples__markdown_generator__pass__generator__guard_markdown_contract["guard_markdown_contract"]
+        examples__markdown_generator__pass__generator__normalize_topic["normalize_topic"]
         examples__markdown_generator__violation__generator__build_markdown_outline["build_markdown_outline"]
+        examples__markdown_generator__violation__generator__render_markdown_sections["render_markdown_sections"]
+        examples__markdown_generator__demo___load_pass_generator["_load_pass_generator"]
+        examples__markdown_generator__demo__main["main"]
+        examples__markdown_generator__violation__generator__guard_markdown_contract["guard_markdown_contract"]
+        examples__markdown_generator__pass__generator__render_markdown_sections["render_markdown_sections"]
+        examples__markdown_generator__demo___validate_project["_validate_project"]
+        examples__markdown_generator__violation__generator__normalize_topic["normalize_topic"]
     end
     subgraph examples__showcase
+        examples__showcase__server__ShowcaseHandler__do_GET["do_GET"]
         examples__showcase__server__load_env_file["load_env_file"]
         examples__showcase__server__ShowcaseHandler__do_POST["do_POST"]
         examples__showcase__server__resolve_runtime_config["resolve_runtime_config"]
-        examples__showcase__server__ShowcaseHandler__do_GET["do_GET"]
     end
     subgraph extensions__vscode_intract
         extensions__vscode_intract__extension__uri["uri"]
-        extensions__vscode_intract__extension__root["root"]
         extensions__vscode_intract__extension__runIntract["runIntract"]
-        extensions__vscode_intract__extension__workspaceRoot["workspaceRoot"]
-        extensions__vscode_intract__extension__runShell["runShell"]
+        extensions__vscode_intract__extension__root["root"]
         extensions__vscode_intract__extension__activate["activate"]
+        extensions__vscode_intract__extension__runShell["runShell"]
+        extensions__vscode_intract__extension__workspaceRoot["workspaceRoot"]
     end
     subgraph scripts__generate_toon_from_map
-        scripts__generate_toon_from_map___iter_section_lines["_iter_section_lines"]
-        scripts__generate_toon_from_map___function_fragment["_function_fragment"]
-        scripts__generate_toon_from_map___llm_contract_fragment["_llm_contract_fragment"]
-        scripts__generate_toon_from_map___contract_fragment["_contract_fragment"]
-        scripts__generate_toon_from_map___slug["_slug"]
-        scripts__generate_toon_from_map___default_function_fragment["_default_function_fragment"]
-        scripts__generate_toon_from_map__main["main"]
-        scripts__generate_toon_from_map___extract_symbol_names["_extract_symbol_names"]
-        scripts__generate_toon_from_map___parse_functions["_parse_functions"]
         scripts__generate_toon_from_map___ensure_parent["_ensure_parent"]
-        scripts__generate_toon_from_map___parse_intent_from_name["_parse_intent_from_name"]
-        scripts__generate_toon_from_map___run_validate["_run_validate"]
+        scripts__generate_toon_from_map___function_fragment["_function_fragment"]
+        scripts__generate_toon_from_map___slug["_slug"]
+        scripts__generate_toon_from_map___extract_symbol_names["_extract_symbol_names"]
         scripts__generate_toon_from_map___effective_include["_effective_include"]
         scripts__generate_toon_from_map__generate_toon_lines["generate_toon_lines"]
-        scripts__generate_toon_from_map___parse_modules["_parse_modules"]
-        scripts__generate_toon_from_map___build_parser["_build_parser"]
+        scripts__generate_toon_from_map__main["main"]
+        scripts__generate_toon_from_map___parse_functions["_parse_functions"]
         scripts__generate_toon_from_map___resolve_output_profile["_resolve_output_profile"]
+        scripts__generate_toon_from_map___llm_contract_fragment["_llm_contract_fragment"]
+        scripts__generate_toon_from_map___build_parser["_build_parser"]
+        scripts__generate_toon_from_map___run_validate["_run_validate"]
+        scripts__generate_toon_from_map___contract_fragment["_contract_fragment"]
+        scripts__generate_toon_from_map___iter_section_lines["_iter_section_lines"]
+        scripts__generate_toon_from_map___parse_intent_from_name["_parse_intent_from_name"]
+        scripts__generate_toon_from_map___parse_modules["_parse_modules"]
+        scripts__generate_toon_from_map___default_function_fragment["_default_function_fragment"]
     end
     subgraph sdks__go
-        sdks__go__intractsdk__sdk__csv["csv"]
         sdks__go__intractsdk__sdk__Inline["Inline"]
+        sdks__go__intractsdk__sdk__csv["csv"]
     end
     subgraph sdks__java
         sdks__java__src__main__java__io__intract__sdk__IntractContract__IntractContract__inline["inline"]
@@ -69,312 +69,286 @@ flowchart LR
         sdks__rust__src__csv["csv"]
     end
     subgraph sdks__typescript
-        sdks__typescript__src__csv["csv"]
         sdks__typescript__src__inlineContract["inlineContract"]
+        sdks__typescript__src__csv["csv"]
     end
     subgraph src__intract
-        src__intract__manifest_ops__resolve_manifest_paths["resolve_manifest_paths"]
-        src__intract__parsers__inline__parse_priority["parse_priority"]
-        src__intract__plugins__builtins__BasicContractValidatorPlugin__validate["validate"]
-        src__intract__parsers__inline___resolve_action_object["_resolve_action_object"]
-        src__intract__policy___result_policy_line["_result_policy_line"]
-        src__intract__cli__validate["validate"]
-        src__intract__project__validate_sources["validate_sources"]
-        src__intract__validators__effects__NoForbiddenEffectRule__validate["validate"]
-        src__intract__plugins__builtins__ManifestParserPlugin__parse["parse"]
-        src__intract__parsers__inline__parse_key_value["parse_key_value"]
-        src__intract__validators__artifacts__validate_github_actions["validate_github_actions"]
-        src__intract__integrations__redup__scan_blocks_for_intent_duplicates["scan_blocks_for_intent_duplica"]
-        src__intract__parsers__toon___extract_file_path["_extract_file_path"]
-        src__intract__manifest_ops__contract_line_to_manifest_entry["contract_line_to_manifest_entr"]
-        src__intract__parsers__inline__parse_contract_line["parse_contract_line"]
-        src__intract__parsers__inline___add_relation["_add_relation"]
-        src__intract__duplicates__matcher__bucket_signatures["bucket_signatures"]
-        src__intract__watch__diff_snapshots["diff_snapshots"]
-        src__intract__cli__graph["graph"]
-        src__intract__integrations__nexu___target_line_value["_target_line_value"]
-        src__intract__scan_artifacts__discover_artifact_paths["discover_artifact_paths"]
-        src__intract__parsers__toon__parse_toon_uri_line["parse_toon_uri_line"]
-        src__intract__parsers__toon___build_tags["_build_tags"]
-        src__intract__cli___scan_contract_file["_scan_contract_file"]
-        src__intract__cli__engine_suggest["engine_suggest"]
-        src__intract__plugins__manager__load_builtin_plugins["load_builtin_plugins"]
-        src__intract__analyzers__treesitter___find_extent["_find_extent"]
-        src__intract__validators__artifacts__validate_dockerfile["validate_dockerfile"]
-        src__intract__cli___scan_row["_scan_row"]
-        src__intract__plugins__builtins__InlineContractParserPlugin__parse["parse"]
-        src__intract__integrations__redup___resolve_manifest_path["_resolve_manifest_path"]
-        src__intract__check__block_extent["block_extent"]
-        src__intract__mcp__handlers__handle_find_duplicates["handle_find_duplicates"]
-        src__intract__engine__scanner__collect_source_units["collect_source_units"]
-        src__intract__parsers__manifest__load_manifest_records["load_manifest_records"]
-        src__intract__integrations__planfile__tickets_from_report["tickets_from_report"]
-        src__intract__integrations__nexu__scan_contracts_in_text["scan_contracts_in_text"]
-        src__intract__analyzers__python_ast__python_function_extent["python_function_extent"]
-        src__intract__plugins__builtins__OpenAPIParserPlugin__parse["parse"]
-        src__intract__analyzers__typescript___treesitter_typescript_extent["_treesitter_typescript_extent"]
-        src__intract__mcp__server__handle_request["handle_request"]
-        src__intract__policy__decide_policy["decide_policy"]
-        src__intract__proposals__propose_ui_delta_contract_dicts["propose_ui_delta_contract_dict"]
-        src__intract__parsers__manifest__contract_from_mapping["contract_from_mapping"]
-        src__intract__core__artifact__Artifact__from_path["from_path"]
-        src__intract__core__artifact___kind_from_structured_content["_kind_from_structured_content"]
-        src__intract__validators__artifacts__validate_artifact["validate_artifact"]
-        src__intract__parsers__inline__extract_intract_uri["extract_intract_uri"]
-        src__intract__mcp__handlers___resolve_manifest["_resolve_manifest"]
-        src__intract__duplicates__grouping__pairs_to_intent_groups["pairs_to_intent_groups"]
-        src__intract__analyzers__blocks__block_extent_from_patterns["block_extent_from_patterns"]
-        src__intract__parsers__manifest___top_level_contract_record["_top_level_contract_record"]
-        src__intract__manifest_schema___load_manifest_data["_load_manifest_data"]
-        src__intract__integrations__nexu___toon_intent_contract["_toon_intent_contract"]
-        src__intract__analyzers__csharp___treesitter_csharp_extent["_treesitter_csharp_extent"]
-        src__intract__policy___collect_result_policy["_collect_result_policy"]
-        src__intract__parsers__inline___apply_key_value_pair["_apply_key_value_pair"]
-        src__intract__mcp__handlers__handle_validate_intent_snippet["handle_validate_intent_snippet"]
-        src__intract__integrations__nexu___contract_items["_contract_items"]
-        src__intract__duplicates__grouping__find_duplicate_contracts["find_duplicate_contracts"]
-        src__intract__check__validate_selected_paths["validate_selected_paths"]
-        src__intract__engine__assigner__suggest_contracts_for_fragments["suggest_contracts_for_fragment"]
-        src__intract__cli__propose_delta["propose_delta"]
-        src__intract__manifest_schema__validate_manifest["validate_manifest"]
-        src__intract__manifest_schema___load_schema["_load_schema"]
-        src__intract__core__normalizer__normalize_action["normalize_action"]
-        src__intract__manifest_schema___jsonschema_issues["_jsonschema_issues"]
-        src__intract__core__signatures___signature_features["_signature_features"]
-        src__intract__engine__drift__detect_drift["detect_drift"]
-        src__intract__graph__ContractGraph__to_mermaid["to_mermaid"]
-        src__intract__engine__drift__state_from_fragments["state_from_fragments"]
-        src__intract__validators__requirements__validate_required_contracts["validate_required_contracts"]
-        src__intract__plugins__manager___register_unique["_register_unique"]
-        src__intract__coverage__calculate_coverage["calculate_coverage"]
-        src__intract__parsers__inline___parse_special_token["_parse_special_token"]
-        src__intract__core__signatures__build_signatures["build_signatures"]
-        src__intract__cli__tickets["tickets"]
-        src__intract__parsers__toon___get_first["_get_first"]
-        src__intract__check___manifest_changed["_manifest_changed"]
-        src__intract__git__changed_files["changed_files"]
-        src__intract__integrations__nexu___list_field["_list_field"]
-        src__intract__propose_llm___load_litellm_completion["_load_litellm_completion"]
-        src__intract__manifest_ops__load_manifest_document["load_manifest_document"]
-        src__intract__validators__input_output__has_return_value["has_return_value"]
-        src__intract__check__signature_touched["signature_touched"]
-        src__intract__validators__effects__detect_effects["detect_effects"]
-        src__intract__project___validate_manifest_signatures["_validate_manifest_signatures"]
-        src__intract__git___run_git["_run_git"]
-        src__intract__parsers__manifest___top_level_contract_records["_top_level_contract_records"]
-        src__intract__plugins__builtins__ArtifactStructureValidatorPlugin__validate["validate"]
-        src__intract__validators__input_output__ReturnValueRule__validate["validate"]
-        src__intract__core__signatures___normalize_contract["_normalize_contract"]
-        src__intract__integrations__nexu__scan_contracts_in_file["scan_contracts_in_file"]
-        src__intract__parsers__manifest___target_tags["_target_tags"]
-        src__intract__mcp__server__handle_initialize["handle_initialize"]
-        src__intract__scan_artifacts__scan_all_artifacts["scan_all_artifacts"]
-        src__intract__watch__should_scan["should_scan"]
-        src__intract__manifest_ops___iter_ledger_proposals["_iter_ledger_proposals"]
-        src__intract__check___is_fallback_preamble["_is_fallback_preamble"]
-        src__intract__manifest_ops__apply_ledger_to_manifests["apply_ledger_to_manifests"]
-        src__intract__analyzers__treesitter__typescript_function_extent["typescript_function_extent"]
-        src__intract__policy___result_status["_result_status"]
-        src__intract__policy___invalid_manifest_reasons["_invalid_manifest_reasons"]
-        src__intract__core__artifact__infer_language["infer_language"]
-        src__intract__propose_llm___json_line_strings["_json_line_strings"]
-        src__intract__core__normalizer__normalize_requirement["normalize_requirement"]
-        src__intract__integrations__nexu__read_toon_manifest_contracts["read_toon_manifest_contracts"]
-        src__intract__check___language_block_extent["_language_block_extent"]
-        src__intract__duplicates__matcher__find_intent_pairs["find_intent_pairs"]
-        src__intract__integrations__redup__find_intent_duplicate_groups["find_intent_duplicate_groups"]
-        src__intract__integrations__vallm__map_validation_result["map_validation_result"]
-        src__intract__project__load_project_sources["load_project_sources"]
-        src__intract__cli___print_artifact_scan_report["_print_artifact_scan_report"]
-        src__intract__cli__scan["scan"]
-        src__intract__parsers__inline___parse_uri_contract["_parse_uri_contract"]
-        src__intract__parsers__manifest___parse_intent["_parse_intent"]
-        src__intract__integrations__planfile_adapter__PlanfileApiAdapter__sync_from_report["sync_from_report"]
-        src__intract__analyzers__java__java_block_extent["java_block_extent"]
-        src__intract__cli__planfile_push["planfile_push"]
-        src__intract__cli__engine_run["engine_run"]
-        src__intract__integrations__redup__validate_for_redup["validate_for_redup"]
-        src__intract__engine__assigner___infer_effects["_infer_effects"]
-        src__intract__cli__planfile_sync["planfile_sync"]
-        src__intract__propose_llm___build_prompt["_build_prompt"]
-        src__intract__check___is_python_declaration["_is_python_declaration"]
-        src__intract__parsers__toon__load_toon_records["load_toon_records"]
-        src__intract__parsers__openapi__parse_openapi_text["parse_openapi_text"]
-        src__intract__project___project_status["_project_status"]
-        src__intract__validators__registry__get_rule_registry["get_rule_registry"]
-        src__intract__cli___scan_artifacts["_scan_artifacts"]
-        src__intract__engine__drift__hash_text["hash_text"]
-        src__intract__manifest_ops___should_apply_ledger_entry["_should_apply_ledger_entry"]
-        src__intract__analyzers__go__go_block_extent["go_block_extent"]
-        src__intract__parsers__inline___extend_list["_extend_list"]
-        src__intract__check__changed_check["changed_check"]
-        src__intract__policy___p1_missing_reasons["_p1_missing_reasons"]
-        src__intract__mcp__server__handle_tools_call["handle_tools_call"]
-        src__intract__config__load_config["load_config"]
-        src__intract__core__signatures___exact_hash["_exact_hash"]
-        src__intract__cli__init["init"]
-        src__intract__cli__engine_drift["engine_drift"]
-        src__intract__analyzers__python_ast___decorator_lines["_decorator_lines"]
-        src__intract__engine__assigner___infer_object["_infer_object"]
-        src__intract__integrations__redup__block_file_path["block_file_path"]
-        src__intract__integrations__vallm__map_project_report["map_project_report"]
-        src__intract__propose_llm___lines_to_proposals["_lines_to_proposals"]
-        src__intract__core__signatures___add_feature_values["_add_feature_values"]
-        src__intract__graph__build_graph["build_graph"]
-        src__intract__validators__input_output__OutputPresenceRule__validate["validate"]
-        src__intract__cli__duplicates["duplicates"]
-        src__intract__watch__hash_file["hash_file"]
-        src__intract__propose_llm___resolve_model["_resolve_model"]
-        src__intract__git__paths_from_changes["paths_from_changes"]
-        src__intract__integrations__redup__signatures_from_blocks["signatures_from_blocks"]
-        src__intract__mcp__handlers__handle_validate_project["handle_validate_project"]
-        src__intract__integrations__redup__signatures_from_text["signatures_from_text"]
-        src__intract__check__load_selected_sources["load_selected_sources"]
-        src__intract__integrations__redup___apply_duplicate_policy["_apply_duplicate_policy"]
-        src__intract__analyzers__csharp__csharp_block_extent["csharp_block_extent"]
-        src__intract__integrations__planfile_adapter___ticket_from_dict["_ticket_from_dict"]
-        src__intract__validators__input_output__contains_token_like["contains_token_like"]
-        src__intract__analyzers__treesitter__csharp_method_extent["csharp_method_extent"]
-        src__intract__core__normalizer__normalize_many["normalize_many"]
-        src__intract__integrations__vallm__validate_for_vallm["validate_for_vallm"]
-        src__intract__integrations__redup__block_start_line["block_start_line"]
-        src__intract__parsers__manifest___with_target_tags["_with_target_tags"]
-        src__intract__parsers__manifest___target_line["_target_line"]
-        src__intract__core__signatures__build_signature["build_signature"]
-        src__intract__engine__analyzer___line_number["_line_number"]
-        src__intract__analyzers__blocks__scan_braced_block["scan_braced_block"]
-        src__intract__duplicates__scoring__object_similarity["object_similarity"]
-        src__intract__engine__drift__save_state["save_state"]
-        src__intract__engine__assigner___infer_action["_infer_action"]
-        src__intract__cli__coverage["coverage"]
-        src__intract__analyzers__treesitter___load_parser["_load_parser"]
-        src__intract__parsers__toon___get_first_alias["_get_first_alias"]
-        src__intract__cli__artifact_validate["artifact_validate"]
-        src__intract__proposals__propose_ui_delta_contracts["propose_ui_delta_contracts"]
-        src__intract__integrations__nexu___toon_target["_toon_target"]
-        src__intract__cli__propose_llm_cmd["propose_llm_cmd"]
-        src__intract__cli___is_scan_candidate["_is_scan_candidate"]
-        src__intract__analyzers__typescript___scan_braced_block["_scan_braced_block"]
-        src__intract__validators__artifacts__validate_openapi["validate_openapi"]
-        src__intract__engine__monitor__scan_suggest_and_validate["scan_suggest_and_validate"]
-        src__intract__manifest_ops__load_policy_ledger["load_policy_ledger"]
-        src__intract__project__extract_signatures_from_sources["extract_signatures_from_source"]
-        src__intract__duplicates__grouping__union_find_groups["union_find_groups"]
-        src__intract__mcp__handlers__handle_scan_artifacts["handle_scan_artifacts"]
-        src__intract__plugins__manager__discover_plugins["discover_plugins"]
-        src__intract__manifest_ops___existing_contract_ids["_existing_contract_ids"]
-        src__intract__integrations__redup___intent_duplicate_label["_intent_duplicate_label"]
-        src__intract__manifest_schema___manifest_report["_manifest_report"]
-        src__intract__parsers__inline__extract_contract_records_from_text["extract_contract_records_from_"]
-        src__intract__manifest_ops__apply_ledger_to_manifest["apply_ledger_to_manifest"]
-        src__intract__manifest_ops___append_manifest_proposal["_append_manifest_proposal"]
-        src__intract__parsers__manifest__create_sample_manifest["create_sample_manifest"]
-        src__intract__check__validate_sources_for_hunks["validate_sources_for_hunks"]
-        src__intract__git__staged_hunks["staged_hunks"]
         src__intract__mcp__handlers___resolve_path["_resolve_path"]
-        src__intract__duplicates__scoring__score_similarity["score_similarity"]
-        src__intract__engine__analyzer__analyze_source_units["analyze_source_units"]
-        src__intract__duplicates__grouping__pairs_to_duplicate_contracts["pairs_to_duplicate_contracts"]
-        src__intract__parsers__toon___get_list["_get_list"]
-        src__intract__graph___safe["_safe"]
-        src__intract__watch__watch_tree["watch_tree"]
-        src__intract__duplicates__scoring__jaccard["jaccard"]
-        src__intract__check__parse_unified_diff_hunks["parse_unified_diff_hunks"]
-        src__intract__cli__manifest_apply_ledger["manifest_apply_ledger"]
-        src__intract__parsers__toon___contract_from_uri["_contract_from_uri"]
-        src__intract__core__signatures__make_block_id["make_block_id"]
-        src__intract__cli___print_validation_report["_print_validation_report"]
-        src__intract__watch__snapshot_tree["snapshot_tree"]
-        src__intract__engine__drift__load_state["load_state"]
-        src__intract__parsers__toon___action_object["_action_object"]
-        src__intract__core__signatures___block_id["_block_id"]
-        src__intract__project___validate_observed_signatures["_validate_observed_signatures"]
-        src__intract__core__artifact__infer_artifact_kind["infer_artifact_kind"]
-        src__intract__core__artifact___kind_from_filename["_kind_from_filename"]
-        src__intract__validators__base__merge_rule_results["merge_rule_results"]
-        src__intract__cli___scan_inline_records["_scan_inline_records"]
-        src__intract__propose_llm__propose_contracts_llm["propose_contracts_llm"]
-        src__intract__cli___print_scan_table["_print_scan_table"]
-        src__intract__engine__analyzer___slice_until_next_match["_slice_until_next_match"]
-        src__intract__manifest_schema___invalid_manifest_report["_invalid_manifest_report"]
-        src__intract__analyzers__python_ast__python_block_extent["python_block_extent"]
-        src__intract__parsers__inline__marker_payload["marker_payload"]
-        src__intract__engine__assigner___split_name["_split_name"]
-        src__intract__integrations__vallm__validate_proposal["validate_proposal"]
-        src__intract__integrations__nexu__read_manifest_contracts["read_manifest_contracts"]
-        src__intract__core__normalizer__normalize_label["normalize_label"]
-        src__intract__integrations__redup___with_block_lines["_with_block_lines"]
-        src__intract__validators__artifacts__validate_kubernetes["validate_kubernetes"]
-        src__intract__integrations__planfile_adapter__PlanfileApiAdapter__pull["pull"]
-        src__intract__integrations__nexu__parse_intract_line["parse_intract_line"]
-        src__intract__cli__check_manifest["check_manifest"]
-        src__intract__parsers__toon___get_list_alias["_get_list_alias"]
-        src__intract__manifest_schema___fallback_issues["_fallback_issues"]
-        src__intract__check__staged_check["staged_check"]
-        src__intract__mcp__server__run_server["run_server"]
-        src__intract__integrations__redup__signatures_from_manifest["signatures_from_manifest"]
-        src__intract__validate_snippet__validate_artifact_with_proposals["validate_artifact_with_proposa"]
-        src__intract__analyzers__typescript__typescript_block_extent["typescript_block_extent"]
-        src__intract__analyzers__csharp___scan_braced_block["_scan_braced_block"]
-        src__intract__analyzers__rust__rust_block_extent["rust_block_extent"]
-        src__intract__engine__assigner__suggest_contract_for_fragment["suggest_contract_for_fragment"]
-        src__intract__git__staged_files["staged_files"]
-        src__intract__validators__registry___discover_entry_point_rules["_discover_entry_point_rules"]
-        src__intract__cli___export_tickets["_export_tickets"]
-        src__intract__project___validate_manifest_signature["_validate_manifest_signature"]
-        src__intract__parsers__inline__split_csv["split_csv"]
-        src__intract__parsers__openapi__parse_openapi_contracts["parse_openapi_contracts"]
-        src__intract__integrations__redup___graph_for_policy["_graph_for_policy"]
-        src__intract__parsers__manifest___target_mapping["_target_mapping"]
-        src__intract__policy___missing_required_p1_reasons["_missing_required_p1_reasons"]
-        src__intract__mcp__handlers__handle_build_graph["handle_build_graph"]
-        src__intract__integrations__redup___duplicate_reasons["_duplicate_reasons"]
-        src__intract__parsers__toon___priority["_priority"]
-        src__intract__parsers__inline__clean_comment_line["clean_comment_line"]
-        src__intract__propose_llm___resolve_api_key["_resolve_api_key"]
+        src__intract__core__signatures___exact_hash["_exact_hash"]
+        src__intract__cli___print_artifact_scan_report["_print_artifact_scan_report"]
+        src__intract__cli__planfile_sync["planfile_sync"]
+        src__intract__plugins__builtins__InlineContractParserPlugin__parse["parse"]
+        src__intract__mcp__handlers__handle_find_duplicates["handle_find_duplicates"]
+        src__intract__policy___invalid_manifest_reasons["_invalid_manifest_reasons"]
+        src__intract__integrations__redup__scan_blocks_for_intent_duplicates["scan_blocks_for_intent_duplica"]
+        src__intract__integrations__redup__find_intent_duplicate_groups["find_intent_duplicate_groups"]
+        src__intract__parsers__toon___extract_file_path["_extract_file_path"]
+        src__intract__integrations__planfile_adapter__PlanfileApiAdapter__sync_from_report["sync_from_report"]
+        src__intract__manifest_schema__validate_manifest["validate_manifest"]
         src__intract__check__changed_lines_by_file["changed_lines_by_file"]
-        src__intract__manifest_ops__write_manifest_document["write_manifest_document"]
-        src__intract__propose_llm___strip_markdown_fence["_strip_markdown_fence"]
-        src__intract__mcp__server__handle_tools_list["handle_tools_list"]
-        src__intract__integrations__nexu___read_yaml_mapping["_read_yaml_mapping"]
-        src__intract__parsers__manifest___file_contract_records["_file_contract_records"]
-        src__intract__integrations__redup__block_end_line["block_end_line"]
-        src__intract__parsers__toon___start_line["_start_line"]
-        src__intract__validators__input_output__InputPresenceRule__validate["validate"]
-        src__intract__mcp__handlers__handle_validate_staged["handle_validate_staged"]
+        src__intract__git__staged_hunks["staged_hunks"]
+        src__intract__validate_snippet__validate_artifact_with_proposals["validate_artifact_with_proposa"]
+        src__intract__integrations__redup__block_file_path["block_file_path"]
+        src__intract__git__paths_from_changes["paths_from_changes"]
+        src__intract__validators__input_output__has_return_value["has_return_value"]
+        src__intract__policy___p1_missing_reasons["_p1_missing_reasons"]
+        src__intract__integrations__vallm__map_project_report["map_project_report"]
+        src__intract__manifest_ops__resolve_manifest_paths["resolve_manifest_paths"]
+        src__intract__validators__artifacts__validate_openapi["validate_openapi"]
+        src__intract__analyzers__treesitter__typescript_function_extent["typescript_function_extent"]
+        src__intract__core__artifact__infer_language["infer_language"]
+        src__intract__duplicates__grouping__find_duplicate_contracts["find_duplicate_contracts"]
+        src__intract__validators__artifacts__validate_dockerfile["validate_dockerfile"]
+        src__intract__engine__assigner___split_name["_split_name"]
+        src__intract__integrations__redup___graph_for_policy["_graph_for_policy"]
+        src__intract__cli__tickets["tickets"]
+        src__intract__analyzers__typescript__typescript_block_extent["typescript_block_extent"]
+        src__intract__integrations__nexu__read_manifest_contracts["read_manifest_contracts"]
+        src__intract__project___validate_observed_signatures["_validate_observed_signatures"]
+        src__intract__parsers__inline___parse_uri_contract["_parse_uri_contract"]
+        src__intract__scan_artifacts__discover_artifact_paths["discover_artifact_paths"]
+        src__intract__duplicates__scoring__object_similarity["object_similarity"]
+        src__intract__propose_llm___load_litellm_completion["_load_litellm_completion"]
         src__intract__check___fallback_block_extent["_fallback_block_extent"]
+        src__intract__watch__snapshot_tree["snapshot_tree"]
+        src__intract__analyzers__blocks__block_extent_from_patterns["block_extent_from_patterns"]
+        src__intract__integrations__vallm__validate_for_vallm["validate_for_vallm"]
+        src__intract__core__normalizer__normalize_label["normalize_label"]
+        src__intract__parsers__inline___parse_special_token["_parse_special_token"]
+        src__intract__mcp__handlers__handle_build_graph["handle_build_graph"]
+        src__intract__parsers__manifest___parse_intent["_parse_intent"]
+        src__intract__validators__requirements__validate_required_contracts["validate_required_contracts"]
+        src__intract__integrations__redup__block_start_line["block_start_line"]
+        src__intract__analyzers__treesitter___find_extent["_find_extent"]
+        src__intract__check__validate_selected_paths["validate_selected_paths"]
+        src__intract__mcp__server__handle_initialize["handle_initialize"]
+        src__intract__check___is_python_declaration["_is_python_declaration"]
+        src__intract__parsers__toon___get_first_alias["_get_first_alias"]
+        src__intract__parsers__toon___build_tags["_build_tags"]
+        src__intract__core__signatures__build_signatures["build_signatures"]
+        src__intract__analyzers__typescript___treesitter_typescript_extent["_treesitter_typescript_extent"]
+        src__intract__validators__input_output__InputPresenceRule__validate["validate"]
+        src__intract__engine__assigner___infer_object["_infer_object"]
+        src__intract__cli___print_scan_table["_print_scan_table"]
+        src__intract__project__load_project_sources["load_project_sources"]
+        src__intract__integrations__nexu__scan_contracts_in_text["scan_contracts_in_text"]
+        src__intract__integrations__vallm__validate_proposal["validate_proposal"]
+        src__intract__manifest_ops__contract_line_to_manifest_entry["contract_line_to_manifest_entr"]
+        src__intract__mcp__server__run_server["run_server"]
+        src__intract__core__normalizer__normalize_requirement["normalize_requirement"]
+        src__intract__core__signatures___signature_features["_signature_features"]
+        src__intract__integrations__vallm__map_validation_result["map_validation_result"]
+        src__intract__parsers__toon___priority["_priority"]
+        src__intract__validators__registry__get_rule_registry["get_rule_registry"]
+        src__intract__proposals__propose_ui_delta_contracts["propose_ui_delta_contracts"]
+        src__intract__watch__watch_tree["watch_tree"]
+        src__intract__manifest_ops__load_manifest_document["load_manifest_document"]
+        src__intract__validators__artifacts__validate_kubernetes["validate_kubernetes"]
+        src__intract__parsers__toon__parse_toon_uri_line["parse_toon_uri_line"]
+        src__intract__watch__diff_snapshots["diff_snapshots"]
+        src__intract__cli__propose_delta["propose_delta"]
+        src__intract__parsers__openapi__parse_openapi_contracts["parse_openapi_contracts"]
+        src__intract__policy___missing_required_p1_reasons["_missing_required_p1_reasons"]
+        src__intract__integrations__redup__signatures_from_blocks["signatures_from_blocks"]
+        src__intract__mcp__server__handle_tools_call["handle_tools_call"]
+        src__intract__validators__input_output__OutputPresenceRule__validate["validate"]
+        src__intract__parsers__inline__parse_priority["parse_priority"]
+        src__intract__mcp__handlers___resolve_manifest["_resolve_manifest"]
+        src__intract__engine__assigner___infer_effects["_infer_effects"]
+        src__intract__cli__propose_llm_cmd["propose_llm_cmd"]
+        src__intract__manifest_schema___fallback_issues["_fallback_issues"]
+        src__intract__mcp__handlers__handle_validate_staged["handle_validate_staged"]
+        src__intract__engine__analyzer___slice_until_next_match["_slice_until_next_match"]
+        src__intract__validators__base__merge_rule_results["merge_rule_results"]
+        src__intract__manifest_ops__load_policy_ledger["load_policy_ledger"]
+        src__intract__analyzers__rust__rust_block_extent["rust_block_extent"]
+        src__intract__duplicates__scoring__score_similarity["score_similarity"]
+        src__intract__integrations__planfile_adapter__PlanfileApiAdapter__pull["pull"]
+        src__intract__parsers__inline__extract_intract_uri["extract_intract_uri"]
+        src__intract__cli__duplicates["duplicates"]
+        src__intract__integrations__planfile_adapter___ticket_from_dict["_ticket_from_dict"]
+        src__intract__cli__validate["validate"]
+        src__intract__policy___result_policy_line["_result_policy_line"]
+        src__intract__parsers__inline___resolve_action_object["_resolve_action_object"]
+        src__intract__validators__effects__detect_effects["detect_effects"]
+        src__intract__watch__hash_file["hash_file"]
+        src__intract__project__validate_sources["validate_sources"]
+        src__intract__analyzers__java__java_block_extent["java_block_extent"]
+        src__intract__cli___scan_artifacts["_scan_artifacts"]
+        src__intract__check__load_selected_sources["load_selected_sources"]
+        src__intract__integrations__redup___duplicate_reasons["_duplicate_reasons"]
+        src__intract__check___language_block_extent["_language_block_extent"]
+        src__intract__integrations__nexu___toon_intent_contract["_toon_intent_contract"]
+        src__intract__manifest_schema___load_schema["_load_schema"]
+        src__intract__core__signatures___add_feature_values["_add_feature_values"]
+        src__intract__integrations__redup__block_end_line["block_end_line"]
+        src__intract__core__normalizer__normalize_action["normalize_action"]
+        src__intract__check__changed_check["changed_check"]
+        src__intract__graph___safe["_safe"]
+        src__intract__project___validate_manifest_signature["_validate_manifest_signature"]
+        src__intract__plugins__manager___register_unique["_register_unique"]
+        src__intract__core__signatures__build_signature["build_signature"]
+        src__intract__parsers__manifest__create_sample_manifest["create_sample_manifest"]
+        src__intract__analyzers__csharp___treesitter_csharp_extent["_treesitter_csharp_extent"]
+        src__intract__integrations__nexu___list_field["_list_field"]
+        src__intract__cli__planfile_push["planfile_push"]
+        src__intract__policy___collect_result_policy["_collect_result_policy"]
+        src__intract__parsers__manifest___target_mapping["_target_mapping"]
+        src__intract__integrations__redup___intent_duplicate_label["_intent_duplicate_label"]
+        src__intract__manifest_schema___jsonschema_issues["_jsonschema_issues"]
+        src__intract__parsers__toon___get_list["_get_list"]
+        src__intract__analyzers__treesitter__csharp_method_extent["csharp_method_extent"]
+        src__intract__validators__effects__NoForbiddenEffectRule__validate["validate"]
+        src__intract__cli___export_tickets["_export_tickets"]
+        src__intract__parsers__toon___start_line["_start_line"]
+        src__intract__graph__ContractGraph__to_mermaid["to_mermaid"]
+        src__intract__cli___scan_row["_scan_row"]
+        src__intract__integrations__nexu__read_toon_manifest_contracts["read_toon_manifest_contracts"]
+        src__intract__integrations__nexu___toon_target["_toon_target"]
+        src__intract__coverage__calculate_coverage["calculate_coverage"]
+        src__intract__parsers__manifest___target_tags["_target_tags"]
+        src__intract__manifest_schema___invalid_manifest_report["_invalid_manifest_report"]
+        src__intract__mcp__handlers__handle_validate_intent_snippet["handle_validate_intent_snippet"]
+        src__intract__propose_llm___resolve_model["_resolve_model"]
+        src__intract__parsers__inline__extract_contract_records_from_text["extract_contract_records_from_"]
+        src__intract__integrations__nexu___contract_items["_contract_items"]
+        src__intract__analyzers__treesitter___load_parser["_load_parser"]
+        src__intract__integrations__nexu___read_yaml_mapping["_read_yaml_mapping"]
+        src__intract__policy__decide_policy["decide_policy"]
+        src__intract__core__artifact___kind_from_filename["_kind_from_filename"]
+        src__intract__core__signatures___normalize_contract["_normalize_contract"]
+        src__intract__analyzers__python_ast__python_function_extent["python_function_extent"]
+        src__intract__cli__artifact_validate["artifact_validate"]
+        src__intract__scan_artifacts__scan_all_artifacts["scan_all_artifacts"]
+        src__intract__analyzers__csharp___scan_braced_block["_scan_braced_block"]
+        src__intract__parsers__toon___contract_from_uri["_contract_from_uri"]
+        src__intract__check__block_extent["block_extent"]
+        src__intract__cli__engine_run["engine_run"]
+        src__intract__parsers__manifest___top_level_contract_record["_top_level_contract_record"]
+        src__intract__manifest_ops___append_manifest_proposal["_append_manifest_proposal"]
+        src__intract__analyzers__csharp__csharp_block_extent["csharp_block_extent"]
+        src__intract__cli__graph["graph"]
+        src__intract__parsers__inline___add_relation["_add_relation"]
         src__intract__parsers__toon___parse_action_object_from_intent["_parse_action_object_from_inte"]
-        src__intract__validators__engine__validate_contract_against_source["validate_contract_against_sour"]
-        src__intract__integrations__nexu___base_intent_contract["_base_intent_contract"]
-        src__intract__integrations__redup__block_text["block_text"]
+        src__intract__propose_llm___json_line_strings["_json_line_strings"]
+        src__intract__engine__analyzer__analyze_source_units["analyze_source_units"]
+        src__intract__cli___scan_inline_records["_scan_inline_records"]
+        src__intract__integrations__redup___apply_duplicate_policy["_apply_duplicate_policy"]
+        src__intract__engine__monitor__scan_suggest_and_validate["scan_suggest_and_validate"]
+        src__intract__analyzers__go__go_block_extent["go_block_extent"]
+        src__intract__duplicates__matcher__bucket_signatures["bucket_signatures"]
+        src__intract__engine__drift__detect_drift["detect_drift"]
+        src__intract__integrations__nexu___target_line_value["_target_line_value"]
+        src__intract__analyzers__blocks__scan_braced_block["scan_braced_block"]
+        src__intract__git__staged_files["staged_files"]
+        src__intract__integrations__redup__signatures_from_manifest["signatures_from_manifest"]
+        src__intract__propose_llm___lines_to_proposals["_lines_to_proposals"]
+        src__intract__cli___print_validation_report["_print_validation_report"]
+        src__intract__core__signatures__make_block_id["make_block_id"]
+        src__intract__analyzers__python_ast__python_block_extent["python_block_extent"]
+        src__intract__parsers__manifest__contract_from_mapping["contract_from_mapping"]
+        src__intract__duplicates__matcher__find_intent_pairs["find_intent_pairs"]
+        src__intract__validators__artifacts__validate_artifact["validate_artifact"]
+        src__intract__project__extract_signatures_from_sources["extract_signatures_from_source"]
+        src__intract__parsers__toon___get_first["_get_first"]
+        src__intract__cli__check_manifest["check_manifest"]
+        src__intract__duplicates__grouping__union_find_groups["union_find_groups"]
+        src__intract__parsers__inline__parse_contract_line["parse_contract_line"]
+        src__intract__duplicates__grouping__pairs_to_duplicate_contracts["pairs_to_duplicate_contracts"]
+        src__intract__check__parse_unified_diff_hunks["parse_unified_diff_hunks"]
+        src__intract__manifest_schema___manifest_report["_manifest_report"]
         src__intract__project__validate_project["validate_project"]
+        src__intract__parsers__manifest___with_target_tags["_with_target_tags"]
+        src__intract__validators__registry___discover_entry_point_rules["_discover_entry_point_rules"]
+        src__intract__integrations__redup___resolve_manifest_path["_resolve_manifest_path"]
+        src__intract__plugins__manager__discover_plugins["discover_plugins"]
+        src__intract__manifest_schema___load_manifest_data["_load_manifest_data"]
+        src__intract__parsers__inline___extend_list["_extend_list"]
+        src__intract__integrations__redup__block_text["block_text"]
+        src__intract__watch__should_scan["should_scan"]
+        src__intract__proposals__propose_ui_delta_contract_dicts["propose_ui_delta_contract_dict"]
+        src__intract__manifest_ops__write_manifest_document["write_manifest_document"]
+        src__intract__parsers__manifest___file_contract_records["_file_contract_records"]
+        src__intract__cli___is_scan_candidate["_is_scan_candidate"]
+        src__intract__duplicates__scoring__jaccard["jaccard"]
+        src__intract__validators__engine__validate_contract_against_source["validate_contract_against_sour"]
+        src__intract__engine__drift__hash_text["hash_text"]
+        src__intract__cli__coverage["coverage"]
+        src__intract__analyzers__typescript___scan_braced_block["_scan_braced_block"]
+        src__intract__integrations__nexu__scan_contracts_in_file["scan_contracts_in_file"]
+        src__intract__engine__scanner__collect_source_units["collect_source_units"]
+        src__intract__git__changed_files["changed_files"]
+        src__intract__config__load_config["load_config"]
+        src__intract__cli___scan_contract_file["_scan_contract_file"]
+        src__intract__project___project_status["_project_status"]
+        src__intract__project___validate_manifest_signatures["_validate_manifest_signatures"]
+        src__intract__mcp__handlers__handle_scan_artifacts["handle_scan_artifacts"]
+        src__intract__engine__drift__state_from_fragments["state_from_fragments"]
+        src__intract__validators__input_output__contains_token_like["contains_token_like"]
+        src__intract__parsers__toon___action_object["_action_object"]
+        src__intract__parsers__toon__load_toon_records["load_toon_records"]
+        src__intract__manifest_ops___existing_contract_ids["_existing_contract_ids"]
+        src__intract__integrations__redup__validate_for_redup["validate_for_redup"]
+        src__intract__policy___result_status["_result_status"]
+        src__intract__parsers__manifest___top_level_contract_records["_top_level_contract_records"]
+        src__intract__manifest_ops___iter_ledger_proposals["_iter_ledger_proposals"]
+        src__intract__engine__drift__load_state["load_state"]
+        src__intract__manifest_ops__apply_ledger_to_manifest["apply_ledger_to_manifest"]
+        src__intract__integrations__nexu__parse_intract_line["parse_intract_line"]
+        src__intract__plugins__builtins__BasicContractValidatorPlugin__validate["validate"]
+        src__intract__propose_llm___resolve_api_key["_resolve_api_key"]
+        src__intract__analyzers__python_ast___decorator_lines["_decorator_lines"]
+        src__intract__plugins__builtins__ArtifactStructureValidatorPlugin__validate["validate"]
+        src__intract__core__signatures___block_id["_block_id"]
+        src__intract__parsers__inline__clean_comment_line["clean_comment_line"]
+        src__intract__parsers__toon___get_list_alias["_get_list_alias"]
+        src__intract__check__signature_touched["signature_touched"]
+        src__intract__engine__assigner__suggest_contract_for_fragment["suggest_contract_for_fragment"]
+        src__intract__check___manifest_changed["_manifest_changed"]
+        src__intract__parsers__manifest__load_manifest_records["load_manifest_records"]
+        src__intract__propose_llm___strip_markdown_fence["_strip_markdown_fence"]
+        src__intract__mcp__handlers__handle_validate_project["handle_validate_project"]
+        src__intract__engine__assigner__suggest_contracts_for_fragments["suggest_contracts_for_fragment"]
+        src__intract__plugins__builtins__OpenAPIParserPlugin__parse["parse"]
+        src__intract__engine__drift__save_state["save_state"]
+        src__intract__integrations__redup__signatures_from_text["signatures_from_text"]
+        src__intract__mcp__server__handle_request["handle_request"]
+        src__intract__mcp__server__handle_tools_list["handle_tools_list"]
+        src__intract__parsers__inline__parse_key_value["parse_key_value"]
+        src__intract__core__artifact___kind_from_structured_content["_kind_from_structured_content"]
+        src__intract__cli__engine_suggest["engine_suggest"]
+        src__intract__parsers__inline__marker_payload["marker_payload"]
+        src__intract__duplicates__grouping__pairs_to_intent_groups["pairs_to_intent_groups"]
+        src__intract__cli__manifest_apply_ledger["manifest_apply_ledger"]
+        src__intract__core__normalizer__normalize_many["normalize_many"]
+        src__intract__validators__input_output__ReturnValueRule__validate["validate"]
+        src__intract__manifest_ops___should_apply_ledger_entry["_should_apply_ledger_entry"]
+        src__intract__manifest_ops__apply_ledger_to_manifests["apply_ledger_to_manifests"]
+        src__intract__integrations__redup___with_block_lines["_with_block_lines"]
+        src__intract__engine__analyzer___line_number["_line_number"]
+        src__intract__parsers__manifest___target_line["_target_line"]
+        src__intract__parsers__inline__split_csv["split_csv"]
+        src__intract__integrations__planfile__tickets_from_report["tickets_from_report"]
+        src__intract__check__validate_sources_for_hunks["validate_sources_for_hunks"]
+        src__intract__git___run_git["_run_git"]
+        src__intract__validators__artifacts__validate_github_actions["validate_github_actions"]
+        src__intract__core__artifact__infer_artifact_kind["infer_artifact_kind"]
+        src__intract__cli__engine_drift["engine_drift"]
+        src__intract__graph__build_graph["build_graph"]
+        src__intract__cli__scan["scan"]
+        src__intract__parsers__inline___apply_key_value_pair["_apply_key_value_pair"]
+        src__intract__core__artifact__Artifact__from_path["from_path"]
+        src__intract__engine__assigner___infer_action["_infer_action"]
+        src__intract__check___is_fallback_preamble["_is_fallback_preamble"]
+        src__intract__propose_llm___build_prompt["_build_prompt"]
+        src__intract__check__staged_check["staged_check"]
+        src__intract__integrations__nexu___base_intent_contract["_base_intent_contract"]
+        src__intract__parsers__openapi__parse_openapi_text["parse_openapi_text"]
+        src__intract__plugins__builtins__ManifestParserPlugin__parse["parse"]
+        src__intract__propose_llm__propose_contracts_llm["propose_contracts_llm"]
+        src__intract__plugins__manager__load_builtin_plugins["load_builtin_plugins"]
+        src__intract__cli__init["init"]
     end
-    examples__markdown_generator__demo___validate_project --> src__intract__project__validate_project
-    examples__markdown_generator__demo__main --> examples__markdown_generator__demo___load_pass_generator
-    examples__markdown_generator__demo__main --> examples__markdown_generator__demo___validate_project
-    examples__markdown_generator__pass__generator__generate_markdown_document --> examples__markdown_generator__pass__generator__normalize_topic
-    examples__markdown_generator__pass__generator__generate_markdown_document --> examples__markdown_generator__pass__generator__build_markdown_outline
-    examples__markdown_generator__pass__generator__generate_markdown_document --> examples__markdown_generator__pass__generator__render_markdown_sections
-    examples__markdown_generator__pass__generator__generate_markdown_document --> examples__markdown_generator__pass__generator__guard_markdown_contract
-    examples__markdown_generator__violation__generator__generate_markdown_document --> examples__markdown_generator__violation__generator__normalize_topic
-    examples__markdown_generator__violation__generator__generate_markdown_document --> examples__markdown_generator__violation__generator__build_markdown_outline
-    examples__markdown_generator__violation__generator__generate_markdown_document --> examples__markdown_generator__violation__generator__render_markdown_sections
-    examples__markdown_generator__violation__generator__generate_markdown_document --> examples__markdown_generator__violation__generator__guard_markdown_contract
-    examples__showcase__server__resolve_runtime_config --> examples__showcase__server__load_env_file
-    examples__showcase__server__ShowcaseHandler__do_GET --> examples__showcase__server__resolve_runtime_config
-    examples__showcase__server__ShowcaseHandler__do_POST --> examples__showcase__server__resolve_runtime_config
-    examples__integration_tests__run_examples__run_example_01 --> src__intract__project__validate_project
-    examples__integration_tests__run_examples__run_example_02 --> src__intract__project__validate_project
-    examples__integration_tests__run_examples__run_example_02 --> src__intract__integrations__planfile__tickets_from_report
-    examples__integration_tests__run_examples__run_example_03 --> src__intract__watch__snapshot_tree
-    examples__integration_tests__run_examples__run_example_03 --> src__intract__watch__diff_snapshots
-    examples__integration_tests__run_examples__run_example_03 --> src__intract__engine__monitor__scan_suggest_and_validate
-    examples__integration_tests__run_examples__run_example_04 --> src__intract__project__validate_project
-    examples__integration_tests__run_examples__main --> examples__integration_tests__run_examples__run_example_01
-    examples__integration_tests__run_examples__main --> examples__integration_tests__run_examples__run_example_02
-    examples__integration_tests__run_examples__main --> examples__integration_tests__run_examples__run_example_03
-    examples__integration_tests__run_examples__main --> examples__integration_tests__run_examples__run_example_04
-    examples__integration_tests__run_examples__main --> examples__integration_tests__run_examples__print_result
     src__intract__propose_llm__propose_contracts_llm --> src__intract__propose_llm___load_litellm_completion
     src__intract__propose_llm__propose_contracts_llm --> src__intract__propose_llm___resolve_model
     src__intract__propose_llm__propose_contracts_llm --> src__intract__propose_llm___resolve_api_key
@@ -382,10 +356,73 @@ flowchart LR
     src__intract__propose_llm__propose_contracts_llm --> src__intract__propose_llm___strip_markdown_fence
     src__intract__propose_llm__propose_contracts_llm --> src__intract__propose_llm___json_line_strings
     src__intract__propose_llm__propose_contracts_llm --> src__intract__propose_llm___lines_to_proposals
-    src__intract__watch__snapshot_tree --> src__intract__watch__should_scan
-    src__intract__watch__snapshot_tree --> src__intract__watch__hash_file
-    src__intract__watch__watch_tree --> src__intract__watch__snapshot_tree
-    src__intract__watch__watch_tree --> src__intract__watch__diff_snapshots
+    src__intract__project__load_project_sources --> src__intract__core__artifact__infer_artifact_kind
+    src__intract__project__extract_signatures_from_sources --> src__intract__core__signatures__build_signatures
+    src__intract__project__extract_signatures_from_sources --> src__intract__parsers__inline__extract_contract_records_from_text
+    src__intract__project___validate_observed_signatures --> src__intract__validators__engine__validate_contract_against_source
+    src__intract__project___validate_manifest_signature --> src__intract__validators__requirements__validate_required_contracts
+    src__intract__project___validate_manifest_signature --> src__intract__validators__engine__validate_contract_against_source
+    src__intract__project___validate_manifest_signatures --> src__intract__project___validate_manifest_signature
+    src__intract__project___validate_manifest_signatures --> src__intract__core__signatures__build_signatures
+    src__intract__project__validate_sources --> src__intract__project__extract_signatures_from_sources
+    src__intract__project__validate_sources --> src__intract__project___validate_observed_signatures
+    src__intract__project__validate_sources --> src__intract__project___validate_manifest_signatures
+    src__intract__project__validate_sources --> src__intract__project___project_status
+    src__intract__project__validate_project --> src__intract__project__load_project_sources
+    src__intract__project__validate_project --> src__intract__project__validate_sources
+    src__intract__project__validate_project --> src__intract__parsers__toon__load_toon_records
+    src__intract__project__validate_project --> src__intract__parsers__manifest__load_manifest_records
+    src__intract__proposals__propose_ui_delta_contract_dicts --> src__intract__proposals__propose_ui_delta_contracts
+    src__intract__coverage__calculate_coverage --> src__intract__project__load_project_sources
+    src__intract__coverage__calculate_coverage --> src__intract__project__extract_signatures_from_sources
+    src__intract__check___fallback_block_extent --> src__intract__check___is_python_declaration
+    src__intract__check___fallback_block_extent --> src__intract__check___is_fallback_preamble
+    src__intract__check__block_extent --> src__intract__check___language_block_extent
+    src__intract__check__block_extent --> src__intract__check___fallback_block_extent
+    src__intract__check__signature_touched --> src__intract__check__block_extent
+    src__intract__check__validate_sources_for_hunks --> src__intract__check__load_selected_sources
+    src__intract__check__validate_sources_for_hunks --> src__intract__check__changed_lines_by_file
+    src__intract__check__validate_sources_for_hunks --> src__intract__parsers__inline__extract_contract_records_from_text
+    src__intract__check__validate_sources_for_hunks --> src__intract__validators__engine__validate_contract_against_source
+    src__intract__check__validate_sources_for_hunks --> src__intract__core__signatures__build_signatures
+    src__intract__check__validate_selected_paths --> src__intract__check__load_selected_sources
+    src__intract__check__validate_selected_paths --> src__intract__project__validate_sources
+    src__intract__check__validate_selected_paths --> src__intract__project__validate_project
+    src__intract__check__validate_selected_paths --> src__intract__parsers__manifest__load_manifest_records
+    src__intract__check__staged_check --> src__intract__git__staged_files
+    src__intract__check__staged_check --> src__intract__git__paths_from_changes
+    src__intract__check__staged_check --> src__intract__git__staged_hunks
+    src__intract__check__staged_check --> src__intract__check__parse_unified_diff_hunks
+    src__intract__check__staged_check --> src__intract__check___manifest_changed
+    src__intract__check__staged_check --> src__intract__check__validate_selected_paths
+    src__intract__check__staged_check --> src__intract__check__validate_sources_for_hunks
+    src__intract__check__changed_check --> src__intract__git__changed_files
+    src__intract__check__changed_check --> src__intract__git__paths_from_changes
+    src__intract__check__changed_check --> src__intract__check___manifest_changed
+    src__intract__check__changed_check --> src__intract__check__validate_selected_paths
+    src__intract__policy___p1_missing_reasons --> src__intract__core__signatures__build_signatures
+    src__intract__policy___p1_missing_reasons --> src__intract__parsers__manifest__load_manifest_records
+    src__intract__policy___p1_missing_reasons --> src__intract__core__normalizer__normalize_requirement
+    src__intract__policy___collect_result_policy --> src__intract__policy___result_status
+    src__intract__policy___collect_result_policy --> src__intract__policy___result_policy_line
+    src__intract__policy___invalid_manifest_reasons --> src__intract__manifest_schema__validate_manifest
+    src__intract__policy___missing_required_p1_reasons --> src__intract__policy___p1_missing_reasons
+    src__intract__policy__decide_policy --> src__intract__policy___collect_result_policy
+    src__intract__policy__decide_policy --> src__intract__policy___missing_required_p1_reasons
+    src__intract__policy__decide_policy --> src__intract__policy___invalid_manifest_reasons
+    src__intract__git__staged_files --> src__intract__git___run_git
+    src__intract__git__changed_files --> src__intract__git___run_git
+    src__intract__git__staged_hunks --> src__intract__git___run_git
+    src__intract__scan_artifacts__discover_artifact_paths --> src__intract__core__artifact__infer_artifact_kind
+    src__intract__scan_artifacts__scan_all_artifacts --> src__intract__scan_artifacts__discover_artifact_paths
+    src__intract__scan_artifacts__scan_all_artifacts --> src__intract__validators__artifacts__validate_artifact
+    src__intract__graph__ContractGraph__to_mermaid --> src__intract__graph___safe
+    src__intract__graph__build_graph --> src__intract__project__load_project_sources
+    src__intract__graph__build_graph --> src__intract__project__extract_signatures_from_sources
+    src__intract__validate_snippet__validate_artifact_with_proposals --> src__intract__integrations__vallm__validate_proposal
+    src__intract__duplicates__scoring__object_similarity --> src__intract__duplicates__scoring__jaccard
+    src__intract__duplicates__scoring__score_similarity --> src__intract__duplicates__scoring__object_similarity
+    src__intract__duplicates__scoring__score_similarity --> src__intract__duplicates__scoring__jaccard
     src__intract__cli__init --> src__intract__parsers__manifest__create_sample_manifest
     src__intract__cli___scan_artifacts --> src__intract__scan_artifacts__scan_all_artifacts
     src__intract__cli___scan_artifacts --> src__intract__cli___print_artifact_scan_report
@@ -415,77 +452,6 @@ flowchart LR
     src__intract__cli__propose_delta --> src__intract__proposals__propose_ui_delta_contracts
     src__intract__cli__propose_llm_cmd --> src__intract__propose_llm__propose_contracts_llm
     src__intract__cli__manifest_apply_ledger --> src__intract__manifest_ops__apply_ledger_to_manifest
-    src__intract__scan_artifacts__discover_artifact_paths --> src__intract__core__artifact__infer_artifact_kind
-    src__intract__scan_artifacts__scan_all_artifacts --> src__intract__scan_artifacts__discover_artifact_paths
-    src__intract__scan_artifacts__scan_all_artifacts --> src__intract__validators__artifacts__validate_artifact
-    src__intract__proposals__propose_ui_delta_contract_dicts --> src__intract__proposals__propose_ui_delta_contracts
-    src__intract__project__load_project_sources --> src__intract__core__artifact__infer_artifact_kind
-    src__intract__project__extract_signatures_from_sources --> src__intract__core__signatures__build_signatures
-    src__intract__project__extract_signatures_from_sources --> src__intract__parsers__inline__extract_contract_records_from_text
-    src__intract__project___validate_observed_signatures --> src__intract__validators__engine__validate_contract_against_source
-    src__intract__project___validate_manifest_signature --> src__intract__validators__requirements__validate_required_contracts
-    src__intract__project___validate_manifest_signature --> src__intract__validators__engine__validate_contract_against_source
-    src__intract__project___validate_manifest_signatures --> src__intract__project___validate_manifest_signature
-    src__intract__project___validate_manifest_signatures --> src__intract__core__signatures__build_signatures
-    src__intract__project__validate_sources --> src__intract__project__extract_signatures_from_sources
-    src__intract__project__validate_sources --> src__intract__project___validate_observed_signatures
-    src__intract__project__validate_sources --> src__intract__project___validate_manifest_signatures
-    src__intract__project__validate_sources --> src__intract__project___project_status
-    src__intract__project__validate_project --> src__intract__project__load_project_sources
-    src__intract__project__validate_project --> src__intract__project__validate_sources
-    src__intract__project__validate_project --> src__intract__parsers__toon__load_toon_records
-    src__intract__project__validate_project --> src__intract__parsers__manifest__load_manifest_records
-    src__intract__check___fallback_block_extent --> src__intract__check___is_python_declaration
-    src__intract__check___fallback_block_extent --> src__intract__check___is_fallback_preamble
-    src__intract__check__block_extent --> src__intract__check___language_block_extent
-    src__intract__check__block_extent --> src__intract__check___fallback_block_extent
-    src__intract__check__signature_touched --> src__intract__check__block_extent
-    src__intract__check__validate_sources_for_hunks --> src__intract__check__load_selected_sources
-    src__intract__check__validate_sources_for_hunks --> src__intract__check__changed_lines_by_file
-    src__intract__check__validate_sources_for_hunks --> src__intract__parsers__inline__extract_contract_records_from_text
-    src__intract__check__validate_sources_for_hunks --> src__intract__validators__engine__validate_contract_against_source
-    src__intract__check__validate_sources_for_hunks --> src__intract__core__signatures__build_signatures
-    src__intract__check__validate_selected_paths --> src__intract__check__load_selected_sources
-    src__intract__check__validate_selected_paths --> src__intract__project__validate_sources
-    src__intract__check__validate_selected_paths --> src__intract__project__validate_project
-    src__intract__check__validate_selected_paths --> src__intract__parsers__manifest__load_manifest_records
-    src__intract__check__staged_check --> src__intract__git__staged_files
-    src__intract__check__staged_check --> src__intract__git__paths_from_changes
-    src__intract__check__staged_check --> src__intract__git__staged_hunks
-    src__intract__check__staged_check --> src__intract__check__parse_unified_diff_hunks
-    src__intract__check__staged_check --> src__intract__check___manifest_changed
-    src__intract__check__staged_check --> src__intract__check__validate_selected_paths
-    src__intract__check__staged_check --> src__intract__check__validate_sources_for_hunks
-    src__intract__check__changed_check --> src__intract__git__changed_files
-    src__intract__check__changed_check --> src__intract__git__paths_from_changes
-    src__intract__check__changed_check --> src__intract__check___manifest_changed
-    src__intract__check__changed_check --> src__intract__check__validate_selected_paths
-    src__intract__coverage__calculate_coverage --> src__intract__project__load_project_sources
-    src__intract__coverage__calculate_coverage --> src__intract__project__extract_signatures_from_sources
-    src__intract__graph__ContractGraph__to_mermaid --> src__intract__graph___safe
-    src__intract__graph__build_graph --> src__intract__project__load_project_sources
-    src__intract__graph__build_graph --> src__intract__project__extract_signatures_from_sources
-    src__intract__policy___p1_missing_reasons --> src__intract__core__signatures__build_signatures
-    src__intract__policy___p1_missing_reasons --> src__intract__parsers__manifest__load_manifest_records
-    src__intract__policy___p1_missing_reasons --> src__intract__core__normalizer__normalize_requirement
-    src__intract__policy___collect_result_policy --> src__intract__policy___result_status
-    src__intract__policy___collect_result_policy --> src__intract__policy___result_policy_line
-    src__intract__policy___invalid_manifest_reasons --> src__intract__manifest_schema__validate_manifest
-    src__intract__policy___missing_required_p1_reasons --> src__intract__policy___p1_missing_reasons
-    src__intract__policy__decide_policy --> src__intract__policy___collect_result_policy
-    src__intract__policy__decide_policy --> src__intract__policy___missing_required_p1_reasons
-    src__intract__policy__decide_policy --> src__intract__policy___invalid_manifest_reasons
-    src__intract__git__staged_files --> src__intract__git___run_git
-    src__intract__git__changed_files --> src__intract__git___run_git
-    src__intract__git__staged_hunks --> src__intract__git___run_git
-    src__intract__manifest_schema___invalid_manifest_report --> src__intract__manifest_schema___manifest_report
-    src__intract__manifest_schema___load_manifest_data --> src__intract__manifest_schema___invalid_manifest_report
-    src__intract__manifest_schema___jsonschema_issues --> src__intract__manifest_schema___load_schema
-    src__intract__manifest_schema__validate_manifest --> src__intract__manifest_schema___load_manifest_data
-    src__intract__manifest_schema__validate_manifest --> src__intract__manifest_schema___jsonschema_issues
-    src__intract__manifest_schema__validate_manifest --> src__intract__manifest_schema___manifest_report
-    src__intract__manifest_schema__validate_manifest --> src__intract__manifest_schema___invalid_manifest_report
-    src__intract__manifest_schema__validate_manifest --> src__intract__manifest_schema___fallback_issues
     src__intract__manifest_ops__contract_line_to_manifest_entry --> src__intract__parsers__inline__parse_contract_line
     src__intract__manifest_ops___iter_ledger_proposals --> src__intract__manifest_ops__load_policy_ledger
     src__intract__manifest_ops___iter_ledger_proposals --> src__intract__manifest_ops___should_apply_ledger_entry
@@ -497,39 +463,41 @@ flowchart LR
     src__intract__manifest_ops__apply_ledger_to_manifest --> src__intract__manifest_ops__write_manifest_document
     src__intract__manifest_ops__apply_ledger_to_manifests --> src__intract__manifest_ops__resolve_manifest_paths
     src__intract__manifest_ops__apply_ledger_to_manifests --> src__intract__manifest_ops__apply_ledger_to_manifest
-    src__intract__validate_snippet__validate_artifact_with_proposals --> src__intract__integrations__vallm__validate_proposal
-    src__intract__duplicates__scoring__object_similarity --> src__intract__duplicates__scoring__jaccard
-    src__intract__duplicates__scoring__score_similarity --> src__intract__duplicates__scoring__object_similarity
-    src__intract__duplicates__scoring__score_similarity --> src__intract__duplicates__scoring__jaccard
-    src__intract__duplicates__matcher__find_intent_pairs --> src__intract__duplicates__matcher__bucket_signatures
-    src__intract__duplicates__matcher__find_intent_pairs --> src__intract__duplicates__scoring__score_similarity
-    src__intract__duplicates__grouping__pairs_to_intent_groups --> src__intract__duplicates__grouping__union_find_groups
-    src__intract__duplicates__grouping__find_duplicate_contracts --> src__intract__project__load_project_sources
-    src__intract__duplicates__grouping__find_duplicate_contracts --> src__intract__project__extract_signatures_from_sources
-    src__intract__duplicates__grouping__find_duplicate_contracts --> src__intract__duplicates__matcher__find_intent_pairs
-    src__intract__duplicates__grouping__find_duplicate_contracts --> src__intract__duplicates__grouping__pairs_to_duplicate_contracts
+    src__intract__watch__snapshot_tree --> src__intract__watch__should_scan
+    src__intract__watch__snapshot_tree --> src__intract__watch__hash_file
+    src__intract__watch__watch_tree --> src__intract__watch__snapshot_tree
+    src__intract__watch__watch_tree --> src__intract__watch__diff_snapshots
+    src__intract__validators__input_output__contains_token_like --> src__intract__core__normalizer__normalize_label
+    src__intract__validators__input_output__InputPresenceRule__validate --> src__intract__validators__input_output__contains_token_like
+    src__intract__validators__input_output__OutputPresenceRule__validate --> src__intract__validators__input_output__contains_token_like
+    src__intract__validators__input_output__ReturnValueRule__validate --> src__intract__validators__input_output__has_return_value
     src__intract__validators__artifacts__validate_openapi --> src__intract__parsers__openapi__parse_openapi_contracts
     src__intract__validators__artifacts__validate_openapi --> src__intract__core__signatures__build_signature
     src__intract__validators__artifacts__validate_artifact --> src__intract__validators__artifacts__validate_dockerfile
     src__intract__validators__artifacts__validate_artifact --> src__intract__validators__artifacts__validate_github_actions
     src__intract__validators__artifacts__validate_artifact --> src__intract__validators__artifacts__validate_openapi
     src__intract__validators__artifacts__validate_artifact --> src__intract__validators__artifacts__validate_kubernetes
+    examples__markdown_generator__pass__generator__generate_markdown_document --> examples__markdown_generator__pass__generator__normalize_topic
+    examples__markdown_generator__pass__generator__generate_markdown_document --> examples__markdown_generator__pass__generator__build_markdown_outline
+    examples__markdown_generator__pass__generator__generate_markdown_document --> examples__markdown_generator__pass__generator__render_markdown_sections
+    examples__markdown_generator__pass__generator__generate_markdown_document --> examples__markdown_generator__pass__generator__guard_markdown_contract
+    src__intract__duplicates__matcher__find_intent_pairs --> src__intract__duplicates__matcher__bucket_signatures
+    src__intract__duplicates__matcher__find_intent_pairs --> src__intract__duplicates__scoring__score_similarity
+    examples__integration_tests__run_examples__run_example_01 --> src__intract__project__validate_project
+    examples__integration_tests__run_examples__run_example_02 --> src__intract__project__validate_project
+    examples__integration_tests__run_examples__run_example_02 --> src__intract__integrations__planfile__tickets_from_report
+    examples__integration_tests__run_examples__run_example_03 --> src__intract__watch__snapshot_tree
+    examples__integration_tests__run_examples__run_example_03 --> src__intract__watch__diff_snapshots
+    examples__integration_tests__run_examples__run_example_03 --> src__intract__engine__monitor__scan_suggest_and_validate
+    examples__integration_tests__run_examples__run_example_04 --> src__intract__project__validate_project
+    examples__integration_tests__run_examples__main --> examples__integration_tests__run_examples__run_example_01
+    examples__integration_tests__run_examples__main --> examples__integration_tests__run_examples__run_example_02
+    examples__integration_tests__run_examples__main --> examples__integration_tests__run_examples__run_example_03
+    examples__integration_tests__run_examples__main --> examples__integration_tests__run_examples__run_example_04
+    examples__integration_tests__run_examples__main --> examples__integration_tests__run_examples__print_result
+    src__intract__validators__effects__NoForbiddenEffectRule__validate --> src__intract__validators__effects__detect_effects
     src__intract__validators__engine__validate_contract_against_source --> src__intract__validators__base__merge_rule_results
     src__intract__validators__engine__validate_contract_against_source --> src__intract__validators__registry__get_rule_registry
-    src__intract__validators__input_output__contains_token_like --> src__intract__core__normalizer__normalize_label
-    src__intract__validators__input_output__InputPresenceRule__validate --> src__intract__validators__input_output__contains_token_like
-    src__intract__validators__input_output__OutputPresenceRule__validate --> src__intract__validators__input_output__contains_token_like
-    src__intract__validators__input_output__ReturnValueRule__validate --> src__intract__validators__input_output__has_return_value
-    src__intract__validators__effects__NoForbiddenEffectRule__validate --> src__intract__validators__effects__detect_effects
-    src__intract__validators__registry__get_rule_registry --> src__intract__validators__registry___discover_entry_point_rules
-    src__intract__core__normalizer__normalize_action --> src__intract__core__normalizer__normalize_label
-    src__intract__core__normalizer__normalize_many --> src__intract__core__normalizer__normalize_label
-    src__intract__core__normalizer__normalize_requirement --> src__intract__core__normalizer__normalize_action
-    src__intract__core__normalizer__normalize_requirement --> src__intract__core__normalizer__normalize_label
-    src__intract__core__artifact__Artifact__from_path --> src__intract__core__artifact__infer_language
-    src__intract__core__artifact__Artifact__from_path --> src__intract__core__artifact__infer_artifact_kind
-    src__intract__core__artifact__infer_artifact_kind --> src__intract__core__artifact___kind_from_filename
-    src__intract__core__artifact__infer_artifact_kind --> src__intract__core__artifact___kind_from_structured_content
     src__intract__core__signatures___normalize_contract --> src__intract__core__normalizer__normalize_action
     src__intract__core__signatures___normalize_contract --> src__intract__core__normalizer__normalize_label
     src__intract__core__signatures___signature_features --> src__intract__core__signatures___add_feature_values
@@ -539,21 +507,22 @@ flowchart LR
     src__intract__core__signatures__build_signature --> src__intract__core__signatures___block_id
     src__intract__core__signatures__build_signature --> src__intract__core__signatures___exact_hash
     src__intract__core__signatures__build_signatures --> src__intract__core__signatures__build_signature
-    src__intract__plugins__builtins__InlineContractParserPlugin__parse --> src__intract__parsers__inline__extract_contract_records_from_text
-    src__intract__plugins__builtins__InlineContractParserPlugin__parse --> src__intract__core__signatures__build_signatures
-    src__intract__plugins__builtins__OpenAPIParserPlugin__parse --> src__intract__parsers__openapi__parse_openapi_text
-    src__intract__plugins__builtins__OpenAPIParserPlugin__parse --> src__intract__core__signatures__build_signatures
-    src__intract__plugins__builtins__ManifestParserPlugin__parse --> src__intract__parsers__manifest__load_manifest_records
-    src__intract__plugins__builtins__ManifestParserPlugin__parse --> src__intract__core__signatures__build_signatures
-    src__intract__plugins__builtins__BasicContractValidatorPlugin__validate --> src__intract__validators__engine__validate_contract_against_source
-    src__intract__plugins__builtins__ArtifactStructureValidatorPlugin__validate --> src__intract__validators__artifacts__validate_artifact
+    src__intract__core__normalizer__normalize_action --> src__intract__core__normalizer__normalize_label
+    src__intract__core__normalizer__normalize_many --> src__intract__core__normalizer__normalize_label
+    src__intract__core__normalizer__normalize_requirement --> src__intract__core__normalizer__normalize_action
+    src__intract__core__normalizer__normalize_requirement --> src__intract__core__normalizer__normalize_label
+    src__intract__duplicates__grouping__pairs_to_intent_groups --> src__intract__duplicates__grouping__union_find_groups
+    src__intract__duplicates__grouping__find_duplicate_contracts --> src__intract__project__load_project_sources
+    src__intract__duplicates__grouping__find_duplicate_contracts --> src__intract__project__extract_signatures_from_sources
+    src__intract__duplicates__grouping__find_duplicate_contracts --> src__intract__duplicates__matcher__find_intent_pairs
+    src__intract__duplicates__grouping__find_duplicate_contracts --> src__intract__duplicates__grouping__pairs_to_duplicate_contracts
+    src__intract__validators__registry__get_rule_registry --> src__intract__validators__registry___discover_entry_point_rules
     src__intract__plugins__manager__load_builtin_plugins --> src__intract__plugins__manager___register_unique
     src__intract__plugins__manager__discover_plugins --> src__intract__plugins__manager__load_builtin_plugins
     src__intract__plugins__manager__discover_plugins --> src__intract__plugins__manager___register_unique
-    src__intract__mcp__server__handle_request --> src__intract__mcp__server__handle_initialize
-    src__intract__mcp__server__handle_request --> src__intract__mcp__server__handle_tools_list
-    src__intract__mcp__server__handle_request --> src__intract__mcp__server__handle_tools_call
-    src__intract__mcp__server__run_server --> src__intract__mcp__server__handle_request
+    examples__markdown_generator__demo___validate_project --> src__intract__project__validate_project
+    examples__markdown_generator__demo__main --> examples__markdown_generator__demo___load_pass_generator
+    examples__markdown_generator__demo__main --> examples__markdown_generator__demo___validate_project
     src__intract__mcp__handlers___resolve_manifest --> src__intract__config__load_config
     src__intract__mcp__handlers__handle_validate_project --> src__intract__mcp__handlers___resolve_path
     src__intract__mcp__handlers__handle_validate_project --> src__intract__mcp__handlers___resolve_manifest
@@ -572,17 +541,28 @@ flowchart LR
     src__intract__mcp__handlers__handle_build_graph --> src__intract__graph__build_graph
     src__intract__mcp__handlers__handle_scan_artifacts --> src__intract__mcp__handlers___resolve_path
     src__intract__mcp__handlers__handle_scan_artifacts --> src__intract__scan_artifacts__scan_all_artifacts
+    src__intract__mcp__server__handle_request --> src__intract__mcp__server__handle_initialize
+    src__intract__mcp__server__handle_request --> src__intract__mcp__server__handle_tools_list
+    src__intract__mcp__server__handle_request --> src__intract__mcp__server__handle_tools_call
+    src__intract__mcp__server__run_server --> src__intract__mcp__server__handle_request
+    src__intract__manifest_schema___invalid_manifest_report --> src__intract__manifest_schema___manifest_report
+    src__intract__manifest_schema___load_manifest_data --> src__intract__manifest_schema___invalid_manifest_report
+    src__intract__manifest_schema___jsonschema_issues --> src__intract__manifest_schema___load_schema
+    src__intract__manifest_schema__validate_manifest --> src__intract__manifest_schema___load_manifest_data
+    src__intract__manifest_schema__validate_manifest --> src__intract__manifest_schema___jsonschema_issues
+    src__intract__manifest_schema__validate_manifest --> src__intract__manifest_schema___manifest_report
+    src__intract__manifest_schema__validate_manifest --> src__intract__manifest_schema___invalid_manifest_report
+    src__intract__manifest_schema__validate_manifest --> src__intract__manifest_schema___fallback_issues
     src__intract__engine__analyzer__analyze_source_units --> src__intract__engine__analyzer___slice_until_next_match
     src__intract__engine__analyzer__analyze_source_units --> src__intract__engine__analyzer___line_number
-    src__intract__engine__drift__state_from_fragments --> src__intract__engine__drift__hash_text
-    src__intract__engine__drift__save_state --> src__intract__engine__drift__state_from_fragments
-    src__intract__engine__drift__detect_drift --> src__intract__engine__drift__state_from_fragments
-    src__intract__engine__assigner___infer_action --> src__intract__engine__assigner___split_name
-    src__intract__engine__assigner___infer_object --> src__intract__engine__assigner___split_name
-    src__intract__engine__assigner__suggest_contract_for_fragment --> src__intract__engine__assigner___infer_action
-    src__intract__engine__assigner__suggest_contract_for_fragment --> src__intract__engine__assigner___infer_object
-    src__intract__engine__assigner__suggest_contract_for_fragment --> src__intract__engine__assigner___infer_effects
-    src__intract__engine__assigner__suggest_contracts_for_fragments --> src__intract__engine__assigner__suggest_contract_for_fragment
+    src__intract__plugins__builtins__InlineContractParserPlugin__parse --> src__intract__parsers__inline__extract_contract_records_from_text
+    src__intract__plugins__builtins__InlineContractParserPlugin__parse --> src__intract__core__signatures__build_signatures
+    src__intract__plugins__builtins__OpenAPIParserPlugin__parse --> src__intract__parsers__openapi__parse_openapi_text
+    src__intract__plugins__builtins__OpenAPIParserPlugin__parse --> src__intract__core__signatures__build_signatures
+    src__intract__plugins__builtins__ManifestParserPlugin__parse --> src__intract__parsers__manifest__load_manifest_records
+    src__intract__plugins__builtins__ManifestParserPlugin__parse --> src__intract__core__signatures__build_signatures
+    src__intract__plugins__builtins__BasicContractValidatorPlugin__validate --> src__intract__validators__engine__validate_contract_against_source
+    src__intract__plugins__builtins__ArtifactStructureValidatorPlugin__validate --> src__intract__validators__artifacts__validate_artifact
     src__intract__engine__monitor__scan_suggest_and_validate --> src__intract__engine__scanner__collect_source_units
     src__intract__engine__monitor__scan_suggest_and_validate --> src__intract__engine__analyzer__analyze_source_units
     src__intract__engine__monitor__scan_suggest_and_validate --> src__intract__engine__assigner__suggest_contracts_for_fragments
@@ -590,21 +570,39 @@ flowchart LR
     src__intract__engine__monitor__scan_suggest_and_validate --> src__intract__engine__drift__detect_drift
     src__intract__engine__monitor__scan_suggest_and_validate --> src__intract__engine__drift__save_state
     src__intract__engine__monitor__scan_suggest_and_validate --> src__intract__project__validate_project
-    src__intract__analyzers__blocks__block_extent_from_patterns --> src__intract__analyzers__blocks__scan_braced_block
-    src__intract__analyzers__rust__rust_block_extent --> src__intract__analyzers__blocks__block_extent_from_patterns
     src__intract__analyzers__treesitter___find_extent --> src__intract__analyzers__treesitter___load_parser
     src__intract__analyzers__treesitter__typescript_function_extent --> src__intract__analyzers__treesitter___find_extent
     src__intract__analyzers__treesitter__csharp_method_extent --> src__intract__analyzers__treesitter___find_extent
-    src__intract__analyzers__go__go_block_extent --> src__intract__analyzers__blocks__block_extent_from_patterns
-    src__intract__analyzers__python_ast__python_function_extent --> src__intract__analyzers__python_ast___decorator_lines
-    src__intract__analyzers__python_ast__python_block_extent --> src__intract__analyzers__python_ast__python_function_extent
+    src__intract__analyzers__blocks__block_extent_from_patterns --> src__intract__analyzers__blocks__scan_braced_block
+    src__intract__engine__assigner___infer_action --> src__intract__engine__assigner___split_name
+    src__intract__engine__assigner___infer_object --> src__intract__engine__assigner___split_name
+    src__intract__engine__assigner__suggest_contract_for_fragment --> src__intract__engine__assigner___infer_action
+    src__intract__engine__assigner__suggest_contract_for_fragment --> src__intract__engine__assigner___infer_object
+    src__intract__engine__assigner__suggest_contract_for_fragment --> src__intract__engine__assigner___infer_effects
+    src__intract__engine__assigner__suggest_contracts_for_fragments --> src__intract__engine__assigner__suggest_contract_for_fragment
+    src__intract__analyzers__rust__rust_block_extent --> src__intract__analyzers__blocks__block_extent_from_patterns
     src__intract__analyzers__csharp__csharp_block_extent --> src__intract__analyzers__csharp___treesitter_csharp_extent
     src__intract__analyzers__csharp__csharp_block_extent --> src__intract__analyzers__csharp___scan_braced_block
     src__intract__analyzers__csharp___treesitter_csharp_extent --> src__intract__analyzers__treesitter__csharp_method_extent
+    src__intract__analyzers__python_ast__python_function_extent --> src__intract__analyzers__python_ast___decorator_lines
+    src__intract__analyzers__python_ast__python_block_extent --> src__intract__analyzers__python_ast__python_function_extent
     src__intract__analyzers__java__java_block_extent --> src__intract__analyzers__blocks__block_extent_from_patterns
+    src__intract__analyzers__go__go_block_extent --> src__intract__analyzers__blocks__block_extent_from_patterns
     src__intract__analyzers__typescript__typescript_block_extent --> src__intract__analyzers__typescript___treesitter_typescript_extent
     src__intract__analyzers__typescript__typescript_block_extent --> src__intract__analyzers__typescript___scan_braced_block
     src__intract__analyzers__typescript___treesitter_typescript_extent --> src__intract__analyzers__treesitter__typescript_function_extent
+    src__intract__parsers__manifest__contract_from_mapping --> src__intract__parsers__manifest___parse_intent
+    src__intract__parsers__manifest___with_target_tags --> src__intract__parsers__manifest___target_tags
+    src__intract__parsers__manifest___top_level_contract_record --> src__intract__parsers__manifest___target_mapping
+    src__intract__parsers__manifest___top_level_contract_record --> src__intract__parsers__manifest___target_line
+    src__intract__parsers__manifest___top_level_contract_record --> src__intract__parsers__manifest___with_target_tags
+    src__intract__parsers__manifest___top_level_contract_record --> src__intract__parsers__manifest__contract_from_mapping
+    src__intract__parsers__manifest___top_level_contract_records --> src__intract__parsers__manifest___top_level_contract_record
+    src__intract__parsers__manifest___file_contract_records --> src__intract__parsers__manifest__contract_from_mapping
+    src__intract__parsers__manifest__load_manifest_records --> src__intract__parsers__manifest___top_level_contract_records
+    src__intract__parsers__manifest__load_manifest_records --> src__intract__parsers__manifest___file_contract_records
+    src__intract__parsers__openapi__parse_openapi_contracts --> src__intract__parsers__manifest__contract_from_mapping
+    src__intract__parsers__openapi__parse_openapi_text --> src__intract__parsers__manifest__contract_from_mapping
     src__intract__parsers__inline__marker_payload --> src__intract__parsers__inline__clean_comment_line
     src__intract__parsers__inline__extract_intract_uri --> src__intract__parsers__inline__parse_key_value
     src__intract__parsers__inline___parse_uri_contract --> src__intract__parsers__toon__parse_toon_uri_line
@@ -619,16 +617,6 @@ flowchart LR
     src__intract__parsers__inline__parse_contract_line --> src__intract__parsers__inline__parse_key_value
     src__intract__parsers__inline__parse_contract_line --> src__intract__parsers__inline___apply_key_value_pair
     src__intract__parsers__inline__extract_contract_records_from_text --> src__intract__parsers__inline__parse_contract_line
-    src__intract__parsers__manifest__contract_from_mapping --> src__intract__parsers__manifest___parse_intent
-    src__intract__parsers__manifest___with_target_tags --> src__intract__parsers__manifest___target_tags
-    src__intract__parsers__manifest___top_level_contract_record --> src__intract__parsers__manifest___target_mapping
-    src__intract__parsers__manifest___top_level_contract_record --> src__intract__parsers__manifest___target_line
-    src__intract__parsers__manifest___top_level_contract_record --> src__intract__parsers__manifest___with_target_tags
-    src__intract__parsers__manifest___top_level_contract_record --> src__intract__parsers__manifest__contract_from_mapping
-    src__intract__parsers__manifest___top_level_contract_records --> src__intract__parsers__manifest___top_level_contract_record
-    src__intract__parsers__manifest___file_contract_records --> src__intract__parsers__manifest__contract_from_mapping
-    src__intract__parsers__manifest__load_manifest_records --> src__intract__parsers__manifest___top_level_contract_records
-    src__intract__parsers__manifest__load_manifest_records --> src__intract__parsers__manifest___file_contract_records
     src__intract__parsers__toon___get_first_alias --> src__intract__parsers__toon___get_first
     src__intract__parsers__toon___get_list_alias --> src__intract__parsers__toon___get_list
     src__intract__parsers__toon___build_tags --> src__intract__parsers__toon___get_list_alias
@@ -646,8 +634,54 @@ flowchart LR
     src__intract__parsers__toon__parse_toon_uri_line --> src__intract__parsers__toon___start_line
     src__intract__parsers__toon__parse_toon_uri_line --> src__intract__parsers__toon___contract_from_uri
     src__intract__parsers__toon__load_toon_records --> src__intract__parsers__toon__parse_toon_uri_line
-    src__intract__parsers__openapi__parse_openapi_contracts --> src__intract__parsers__manifest__contract_from_mapping
-    src__intract__parsers__openapi__parse_openapi_text --> src__intract__parsers__manifest__contract_from_mapping
+    src__intract__integrations__vallm__map_project_report --> src__intract__integrations__vallm__map_validation_result
+    src__intract__integrations__vallm__validate_for_vallm --> src__intract__project__validate_project
+    src__intract__integrations__vallm__validate_for_vallm --> src__intract__integrations__vallm__map_project_report
+    src__intract__integrations__vallm__validate_proposal --> src__intract__parsers__inline__extract_contract_records_from_text
+    src__intract__integrations__vallm__validate_proposal --> src__intract__integrations__vallm__map_project_report
+    src__intract__integrations__vallm__validate_proposal --> src__intract__validators__engine__validate_contract_against_source
+    src__intract__integrations__vallm__validate_proposal --> src__intract__core__signatures__build_signatures
+    extensions__vscode_intract__extension__activate --> extensions__vscode_intract__extension__workspaceRoot
+    extensions__vscode_intract__extension__activate --> extensions__vscode_intract__extension__runIntract
+    extensions__vscode_intract__extension__activate --> extensions__vscode_intract__extension__runShell
+    extensions__vscode_intract__extension__root --> extensions__vscode_intract__extension__runShell
+    extensions__vscode_intract__extension__uri --> extensions__vscode_intract__extension__runShell
+    sdks__java__src__main__java__io__intract__sdk__IntractContract__IntractContract__inline --> sdks__java__src__main__java__io__intract__sdk__IntractContract__IntractContract__join
+    src__intract__core__artifact__Artifact__from_path --> src__intract__core__artifact__infer_language
+    src__intract__core__artifact__Artifact__from_path --> src__intract__core__artifact__infer_artifact_kind
+    src__intract__core__artifact__infer_artifact_kind --> src__intract__core__artifact___kind_from_filename
+    src__intract__core__artifact__infer_artifact_kind --> src__intract__core__artifact___kind_from_structured_content
+    sdks__go__intractsdk__sdk__Inline --> sdks__go__intractsdk__sdk__csv
+    sdks__typescript__src__inlineContract --> sdks__typescript__src__csv
+    sdks__rust__src__inline_contract --> sdks__rust__src__csv
+    src__intract__engine__drift__state_from_fragments --> src__intract__engine__drift__hash_text
+    src__intract__engine__drift__save_state --> src__intract__engine__drift__state_from_fragments
+    src__intract__engine__drift__detect_drift --> src__intract__engine__drift__state_from_fragments
+    scripts__generate_toon_from_map___parse_modules --> scripts__generate_toon_from_map___iter_section_lines
+    scripts__generate_toon_from_map___parse_functions --> scripts__generate_toon_from_map___iter_section_lines
+    scripts__generate_toon_from_map___parse_functions --> scripts__generate_toon_from_map___extract_symbol_names
+    scripts__generate_toon_from_map___llm_contract_fragment --> src__intract__propose_llm__propose_contracts_llm
+    scripts__generate_toon_from_map___llm_contract_fragment --> src__intract__parsers__inline__parse_contract_line
+    scripts__generate_toon_from_map___llm_contract_fragment --> scripts__generate_toon_from_map___contract_fragment
+    scripts__generate_toon_from_map___llm_contract_fragment --> scripts__generate_toon_from_map___parse_intent_from_name
+    scripts__generate_toon_from_map___llm_contract_fragment --> scripts__generate_toon_from_map___slug
+    scripts__generate_toon_from_map___default_function_fragment --> scripts__generate_toon_from_map___slug
+    scripts__generate_toon_from_map___default_function_fragment --> scripts__generate_toon_from_map___contract_fragment
+    scripts__generate_toon_from_map___default_function_fragment --> scripts__generate_toon_from_map___parse_intent_from_name
+    scripts__generate_toon_from_map___function_fragment --> scripts__generate_toon_from_map___llm_contract_fragment
+    scripts__generate_toon_from_map___function_fragment --> scripts__generate_toon_from_map___default_function_fragment
+    scripts__generate_toon_from_map__generate_toon_lines --> scripts__generate_toon_from_map___parse_modules
+    scripts__generate_toon_from_map__generate_toon_lines --> scripts__generate_toon_from_map___parse_functions
+    scripts__generate_toon_from_map__generate_toon_lines --> scripts__generate_toon_from_map___resolve_output_profile
+    scripts__generate_toon_from_map__generate_toon_lines --> scripts__generate_toon_from_map___effective_include
+    scripts__generate_toon_from_map__main --> scripts__generate_toon_from_map___build_parser
+    scripts__generate_toon_from_map__main --> scripts__generate_toon_from_map___ensure_parent
+    scripts__generate_toon_from_map__main --> scripts__generate_toon_from_map__generate_toon_lines
+    scripts__generate_toon_from_map__main --> scripts__generate_toon_from_map___run_validate
+    examples__markdown_generator__violation__generator__generate_markdown_document --> examples__markdown_generator__violation__generator__normalize_topic
+    examples__markdown_generator__violation__generator__generate_markdown_document --> examples__markdown_generator__violation__generator__build_markdown_outline
+    examples__markdown_generator__violation__generator__generate_markdown_document --> examples__markdown_generator__violation__generator__render_markdown_sections
+    examples__markdown_generator__violation__generator__generate_markdown_document --> examples__markdown_generator__violation__generator__guard_markdown_contract
     src__intract__integrations__nexu__parse_intract_line --> src__intract__parsers__inline__clean_comment_line
     src__intract__integrations__nexu__parse_intract_line --> src__intract__parsers__inline__parse_contract_line
     src__intract__integrations__nexu__scan_contracts_in_text --> src__intract__integrations__nexu__parse_intract_line
@@ -661,13 +695,11 @@ flowchart LR
     src__intract__integrations__nexu__read_toon_manifest_contracts --> src__intract__integrations__nexu___read_yaml_mapping
     src__intract__integrations__nexu__read_toon_manifest_contracts --> src__intract__integrations__nexu___toon_intent_contract
     src__intract__integrations__nexu__read_toon_manifest_contracts --> src__intract__integrations__nexu___contract_items
-    src__intract__integrations__vallm__map_project_report --> src__intract__integrations__vallm__map_validation_result
-    src__intract__integrations__vallm__validate_for_vallm --> src__intract__project__validate_project
-    src__intract__integrations__vallm__validate_for_vallm --> src__intract__integrations__vallm__map_project_report
-    src__intract__integrations__vallm__validate_proposal --> src__intract__parsers__inline__extract_contract_records_from_text
-    src__intract__integrations__vallm__validate_proposal --> src__intract__integrations__vallm__map_project_report
-    src__intract__integrations__vallm__validate_proposal --> src__intract__validators__engine__validate_contract_against_source
-    src__intract__integrations__vallm__validate_proposal --> src__intract__core__signatures__build_signatures
+    examples__showcase__server__resolve_runtime_config --> examples__showcase__server__load_env_file
+    examples__showcase__server__ShowcaseHandler__do_GET --> examples__showcase__server__resolve_runtime_config
+    examples__showcase__server__ShowcaseHandler__do_POST --> examples__showcase__server__resolve_runtime_config
+    src__intract__integrations__planfile_adapter__PlanfileApiAdapter__pull --> src__intract__integrations__planfile_adapter___ticket_from_dict
+    src__intract__integrations__planfile_adapter__PlanfileApiAdapter__sync_from_report --> src__intract__integrations__planfile__tickets_from_report
     src__intract__integrations__redup__block_end_line --> src__intract__integrations__redup__block_start_line
     src__intract__integrations__redup__signatures_from_text --> src__intract__parsers__inline__extract_contract_records_from_text
     src__intract__integrations__redup__signatures_from_text --> src__intract__core__signatures__build_signatures
@@ -695,35 +727,3 @@ flowchart LR
     src__intract__integrations__redup__scan_blocks_for_intent_duplicates --> src__intract__integrations__redup__signatures_from_blocks
     src__intract__integrations__redup__scan_blocks_for_intent_duplicates --> src__intract__integrations__redup__find_intent_duplicate_groups
     src__intract__integrations__redup__scan_blocks_for_intent_duplicates --> src__intract__integrations__redup__signatures_from_manifest
-    src__intract__integrations__planfile_adapter__PlanfileApiAdapter__pull --> src__intract__integrations__planfile_adapter___ticket_from_dict
-    src__intract__integrations__planfile_adapter__PlanfileApiAdapter__sync_from_report --> src__intract__integrations__planfile__tickets_from_report
-    scripts__generate_toon_from_map___parse_modules --> scripts__generate_toon_from_map___iter_section_lines
-    scripts__generate_toon_from_map___parse_functions --> scripts__generate_toon_from_map___iter_section_lines
-    scripts__generate_toon_from_map___parse_functions --> scripts__generate_toon_from_map___extract_symbol_names
-    scripts__generate_toon_from_map___llm_contract_fragment --> src__intract__propose_llm__propose_contracts_llm
-    scripts__generate_toon_from_map___llm_contract_fragment --> src__intract__parsers__inline__parse_contract_line
-    scripts__generate_toon_from_map___llm_contract_fragment --> scripts__generate_toon_from_map___contract_fragment
-    scripts__generate_toon_from_map___llm_contract_fragment --> scripts__generate_toon_from_map___parse_intent_from_name
-    scripts__generate_toon_from_map___llm_contract_fragment --> scripts__generate_toon_from_map___slug
-    scripts__generate_toon_from_map___default_function_fragment --> scripts__generate_toon_from_map___slug
-    scripts__generate_toon_from_map___default_function_fragment --> scripts__generate_toon_from_map___contract_fragment
-    scripts__generate_toon_from_map___default_function_fragment --> scripts__generate_toon_from_map___parse_intent_from_name
-    scripts__generate_toon_from_map___function_fragment --> scripts__generate_toon_from_map___llm_contract_fragment
-    scripts__generate_toon_from_map___function_fragment --> scripts__generate_toon_from_map___default_function_fragment
-    scripts__generate_toon_from_map__generate_toon_lines --> scripts__generate_toon_from_map___parse_modules
-    scripts__generate_toon_from_map__generate_toon_lines --> scripts__generate_toon_from_map___parse_functions
-    scripts__generate_toon_from_map__generate_toon_lines --> scripts__generate_toon_from_map___resolve_output_profile
-    scripts__generate_toon_from_map__generate_toon_lines --> scripts__generate_toon_from_map___effective_include
-    scripts__generate_toon_from_map__main --> scripts__generate_toon_from_map___build_parser
-    scripts__generate_toon_from_map__main --> scripts__generate_toon_from_map___ensure_parent
-    scripts__generate_toon_from_map__main --> scripts__generate_toon_from_map__generate_toon_lines
-    scripts__generate_toon_from_map__main --> scripts__generate_toon_from_map___run_validate
-    extensions__vscode_intract__extension__activate --> extensions__vscode_intract__extension__workspaceRoot
-    extensions__vscode_intract__extension__activate --> extensions__vscode_intract__extension__runIntract
-    extensions__vscode_intract__extension__activate --> extensions__vscode_intract__extension__runShell
-    extensions__vscode_intract__extension__root --> extensions__vscode_intract__extension__runShell
-    extensions__vscode_intract__extension__uri --> extensions__vscode_intract__extension__runShell
-    sdks__java__src__main__java__io__intract__sdk__IntractContract__IntractContract__inline --> sdks__java__src__main__java__io__intract__sdk__IntractContract__IntractContract__join
-    sdks__go__intractsdk__sdk__Inline --> sdks__go__intractsdk__sdk__csv
-    sdks__typescript__src__inlineContract --> sdks__typescript__src__csv
-    sdks__rust__src__inline_contract --> sdks__rust__src__csv
