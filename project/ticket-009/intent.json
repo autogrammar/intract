@@ -1,0 +1,98 @@
+{
+  "schema": "new-project.intent/v3",
+  "ticket": "ticket-009",
+  "summary": "adopt wellmanifest/dsl shared command schemas",
+  "workstream": "integration",
+  "classification": {
+    "kind": "SERVICE",
+    "priority": "P2",
+    "origin": "health"
+  },
+  "allowedPaths": [
+    "project/ticket-009/**",
+    "TODO.md",
+    "project/TICKETS.md",
+    "docs/commands.md",
+    "dsl-manifest.json"
+  ],
+  "forbiddenPaths": [
+    "project/ticket-*/user-*.md"
+  ],
+  "stacks": [],
+  "dependsOn": [],
+  "conflictsWith": [],
+  "integrationTicket": null,
+  "delivery": {
+    "acceptedBaseSha": "6e798ab1bd3e048044e93d6fe67a55ac92be79c6",
+    "targetBranch": "main",
+    "outcome": "Bind the applicable wellmanifest/dsl shared command schemas (VALIDATE, QUERY) in the dsl-manifest standardsLock at pinned revision 5f40ad5d228d6301bdbf4bb78e1646ebd3c2b95b and document the CLI-to-shared-schema mapping in docs/commands.md.",
+    "nonGoals": [
+      "No runtime wiring of the shared schemas into CLI or MCP handlers",
+      "No changes to src/, tests/ or vendored schema files",
+      "No vocabularyKind change; the intract DSL stays documents-kind",
+      "No adoption of GENERATE, PATCH or RESOLVE (not applicable)"
+    ],
+    "complexity": "S",
+    "estimatedMinutes": 30,
+    "budgets": {
+      "maxImplementationFiles": 4,
+      "maxAffectedComponents": 1,
+      "maxPublicInterfaceChanges": 0,
+      "maxRuntimeDependencies": 0
+    },
+    "architecture": {
+      "status": "accepted",
+      "decision": "Declarative adoption via standardsLock contract pins plus a digest-bound docs mapping; no vendored schema copies because intract has no dsl2 runtime consuming them.",
+      "components": [
+        {
+          "name": "dsl-contracts",
+          "paths": [
+            "dsl-manifest.json",
+            "docs/**"
+          ]
+        }
+      ],
+      "responsibilityChanges": false,
+      "interfaceChanges": [],
+      "dataChanges": [],
+      "ui": {
+        "impact": "none",
+        "states": [],
+        "evidence": []
+      },
+      "rollback": "Revert the merge commit; standardsLock pin and docs section are self-contained."
+    },
+    "runtimeDependencies": [],
+    "validation": [
+      {
+        "criterion": "AC-01",
+        "commands": [
+          "python3 -c \"import json; print(json.load(open('dsl-manifest.json'))['standardsLock'])\""
+        ],
+        "evidence": "Lock pins wellmanifest/dsl@5f40ad5 with sha256 digests for dsl-manifest/v1, DSL_STANDARD.md, dsl-commands/validate and dsl-commands/query computed from origin/main blobs."
+      },
+      {
+        "criterion": "AC-02",
+        "commands": [
+          "grep -n 'Wsp\u00f3lne schematy komend' docs/commands.md"
+        ],
+        "evidence": "Mapping section documents VALIDATE and QUERY adoption and non-adoption reasons for GENERATE, PATCH, RESOLVE."
+      },
+      {
+        "criterion": "AC-03",
+        "commands": [
+          "python3 dsl_check.py validate .",
+          "python3 dsl_check.py standards ."
+        ],
+        "evidence": "DSL-PASS: passed (0 errors) for both validate and standards on the ticket head."
+      },
+      {
+        "criterion": "AC-04",
+        "commands": [
+          "./project/governance-check.sh"
+        ],
+        "evidence": "GOV-PASS: passed (0 errors, 0 warnings) on the ticket head."
+      }
+    ]
+  }
+}

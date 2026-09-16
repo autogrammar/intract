@@ -3,7 +3,7 @@
   "schema": "wellmanifest.dsl/manifest/v1",
   "id": "autogrammar.intract",
   "name": "Intract Intent Contract DSL",
-  "version": "0.5.14",
+  "version": "0.6.0",
   "status": "stable",
   "purpose": "Intent-contract layer for codebases and software delivery artifacts — describe, validate and monitor intent across code, files, manifests, CI/CD, and DevOps artifacts",
   "domain": "intent-contracts",
@@ -27,7 +27,8 @@
     "schemas/intract.schema.json",
     "README.md",
     "docs/contract-format.md",
-    "docs/intent-yaml.md"
+    "docs/intent-yaml.md",
+    "docs/commands.md"
   ],
   "artifacts": [
     {
@@ -39,6 +40,11 @@
       "path": "README.md",
       "role": "documentation",
       "digest": "sha256:e7110fa8d750ab6f032eb5d7e56d568903c499aa1d97e510bb4f309ad202b84a"
+    },
+    {
+      "path": "docs/commands.md",
+      "role": "documentation",
+      "digest": "sha256:647469aa56a61c3b6dd14adab5a25e8251cab93b88ba6aaef1ef0f4ba0068113"
     }
   ],
   "namespaces": [
@@ -134,15 +140,23 @@
         "standard": "wellmanifest.dsl",
         "version": "0.1.0",
         "repository": "https://github.com/wellmanifest/dsl",
-        "revision": "b7d0595c95e5abbb48ebfdbdae0bc6d43c6f82f4",
+        "revision": "5f40ad5d228d6301bdbf4bb78e1646ebd3c2b95b",
         "contracts": [
           {
             "ref": "https://wellmanifest.dev/schemas/dsl-manifest/v1",
-            "digest": "sha256:34d356b76bbd483372df84bb986e15bb84e9c1f8b11b7dc9e3a6c7276c85ed13"
+            "digest": "sha256:d128a2cab0459fab91788a062875242dc5cfd62fd9f37cab49c8adb42b28901d"
           },
           {
             "ref": "https://wellmanifest.dev/spec/DSL_STANDARD.md",
-            "digest": "sha256:2dfb09b5689289c3ad096057ca1dc2f19512639e3662188dd6c5ee25e4e8c53b"
+            "digest": "sha256:ed53c9229321226aef867567f1a14c656a3c1bb0fc1f993ea4397e183c38acd6"
+          },
+          {
+            "ref": "https://wellmanifest.dev/schemas/dsl-commands/validate",
+            "digest": "sha256:51d7022d1bafcf3256838cd11c97bef8ce443962b7b138fcdd5949669b6e49bf"
+          },
+          {
+            "ref": "https://wellmanifest.dev/schemas/dsl-commands/query",
+            "digest": "sha256:812c755a92e6b4a945dcc1d63bf2d5967acae09577f2945925f7432cdf72165c"
           }
         ]
       }

@@ -121,3 +121,22 @@ python -m intract engine run .
 python -m intract engine run . --planfile
 python -m intract engine run . --json
 ```
+
+## Wspólne schematy komend (`wellmanifest/dsl`)
+
+Część powierzchni CLI odpowiada wspólnym schematom komend publikowanym przez
+`wellmanifest/dsl` (`schemas/commands/*.schema.json`). Powiązanie jest
+deklaratywne — manifest DSL przypięte jest do `wellmanifest/dsl@5f40ad5`
+przez `standardsLock` w `dsl-manifest.json`.
+
+| Komenda CLI | Wspólny schemat | Mapowanie |
+| --- | --- | --- |
+| `intract validate <path>` | `VALIDATE` | `{verb: VALIDATE, path}` |
+| `intract coverage <path>`, `duplicates`, `graph`, `scan` | `QUERY` | `{verb: QUERY, target: <path>, format?}` |
+
+Nieadoptowane:
+
+- `GENERATE` — `propose`/`engine suggest` przyjmują plik lub ustrukturyzowane
+  wejście, nie `text` wymagany przez schemat.
+- `PATCH` — intract nie aplikuje patchy na cele (pfix wycofany, ticket-004).
+- `RESOLVE` — brak rezolucji tekstu naturalnego (`llm.mode: none`).
