@@ -1,4 +1,4 @@
-# intract | 474 func | 91f | 11397L | python | 2026-06-05
+# intract | 476 func | 93f | 11318L | python | 2026-09-08
 # generated in 0.00s
 
 HEALTH:
@@ -8,20 +8,19 @@ ALERTS[20]:
   !!! high_fan_out     ShowcaseHandler.do_POST = 22 (limit:10)
   !!! high_fan_out     check = 21 (limit:10)
   !!  high_fan_out     watch = 16 (limit:10)
+  !   high_fan_out     validate_sources_for_hunks = 14 (limit:10)
+  !   high_fan_out     build_graph = 14 (limit:10)
   !   high_fan_out     engine_suggest = 14 (limit:10)
   !   high_fan_out     engine_drift = 14 (limit:10)
   !   high_fan_out     manifest_apply_ledger = 14 (limit:10)
-  !   high_fan_out     validate_sources_for_hunks = 14 (limit:10)
-  !   high_fan_out     build_graph = 14 (limit:10)
-  !   high_fan_out     pairs_to_intent_groups = 14 (limit:10)
   !   high_fan_out     validate_artifact = 14 (limit:10)
+  !   high_fan_out     pairs_to_intent_groups = 14 (limit:10)
 
-MODULES[160] (top by size):
+MODULES[169] (top by size):
   M[src/intract/cli.py] 683L C:0 F:33 CC↑13 D:0 (python)
-  M[goal.yaml] 511L C:0 F:0 CC↑0 D:0 (yaml)
+  M[goal.yaml] 529L C:0 F:0 CC↑0 D:0 (yaml)
   M[scripts/generate_toon_from_map.py] 475L C:2 F:18 CC↑9 D:0 (python)
   M[src/intract/parsers/inline.py] 335L C:1 F:24 CC↑13 D:9 (python)
-  M[tree.txt] 314L C:0 F:0 CC↑0 D:0 (txt)
   M[src/intract/check.py] 297L C:1 F:15 CC↑14 D:2 (python)
   M[src/intract/integrations/redup.py] 287L C:4 F:19 CC↑8 D:0 (python)
   M[src/intract/integrations/planfile_adapter.py] 255L C:4 F:13 CC↑13 D:0 (python)
@@ -32,21 +31,22 @@ MODULES[160] (top by size):
   M[src/intract/validators/artifacts.py] 181L C:1 F:6 CC↑9 D:3 (python)
   M[src/intract/parsers/manifest.py] 177L C:0 F:12 CC↑9 D:8 (python)
   M[src/intract/parsers/toon.py] 169L C:0 F:13 CC↑8 D:2 (python)
-  LANGS: python:101/yaml:16/json:11/typescript:7/other:5/shell:5/toml:4/go:2/csharp:2/javascript:2/java:1/rust:1/yml:1/intract:1/txt:1
+  M[src/intract/project.py] 167L C:0 F:8 CC↑9 D:11 (python)
+  LANGS: python:103/yaml:16/json:12/typescript:7/shell:6/other:4/yml:4/toml:4/txt:3/go:2/csharp:2/javascript:2/java:1/rust:1/e2e:1/intract:1
 
 HOTSPOTS[10]:
   ★ ShowcaseHandler.do_POST fan=22  // Orchestrates 22 calls
   ★ check fan=21  // Policy-aware validation for pre-commit/CI.
   ★ watch fan=16  // Watch folder and re-validate Intract contracts when logical files change.
-  ★ engine_suggest fan=14  // Orchestrates 14 calls
-  ★ engine_drift fan=14  // Orchestrates 14 calls
+  ★ validate_sources_for_hunks fan=14  // Orchestrates 14 calls
+  ★ build_graph fan=14  // Orchestrates 14 calls
 
 REFACTOR[5]:
   [1] H/H Split god module src/intract/cli.py (683L, 0 classes)
-  [2] H/H Split god module goal.yaml (511L, 0 classes)
+  [2] H/H Split god module goal.yaml (529L, 0 classes)
   [3] M/M Reduce ShowcaseHandler.do_POST fan-out (currently 22)
   [4] M/M Reduce check fan-out (currently 21)
   [5] M/M Reduce watch fan-out (currently 16)
 
 EVOLUTION:
-  2026-06-05 CC̄=3.5 crit=23 11397L // Automated analysis
+  2026-09-08 CC̄=3.5 crit=23 11318L // Automated analysis

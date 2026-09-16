@@ -1,5 +1,5 @@
-# code2llm/evolution | 401 func | 66f | 2026-06-05
-# generated in 0.00s
+# code2llm/evolution | 401 func | 66f | 2026-09-08
+# generated in 0.02s
 
 NEXT[2] (ranked by impact):
   [1] !! SPLIT           src/intract/cli.py
@@ -7,7 +7,7 @@ NEXT[2] (ranked by impact):
       EFFORT: ~4h  IMPACT: 8879
 
   [2] !! SPLIT           goal.yaml
-      WHY: 511L, 0 classes, max CC=0
+      WHY: 529L, 0 classes, max CC=0
       EFFORT: ~4h  IMPACT: 0
 
 

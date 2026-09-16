@@ -1,111 +1,111 @@
-# code2llm | 160f 11397L | python:101,yaml:16,json:11,typescript:7,shell:5,toml:4,javascript:2,csharp:2,go:2,txt:1,yml:1,intract:1,java:1,rust:1 | 2026-06-05
-# generated in 0.03s
-# CC̅=3.5 | critical:0/474 | dups:0 | cycles:0
+# code2llm | 169f 11318L | python:103,yaml:16,json:12,typescript:7,shell:6,toml:4,yml:4,txt:3,javascript:2,csharp:2,go:2,e2e:1,intract:1,java:1,rust:1 | 2026-09-08
+# generated in 0.09s
+# CC̅=3.5 | critical:0/476 | dups:0 | cycles:0
 
 HEALTH[0]: ok
 
 REFACTOR[0]: none needed
 
-PIPELINES[160]:
-  [1] Src [read_profile]: read_profile
+PIPELINES[162]:
+  [1] Src [renderDashboard]: renderDashboard
       PURITY: 100% pure
-  [2] Src [check_permission]: check_permission
+  [2] Src [fetchUserProfile]: fetchUserProfile
       PURITY: 100% pure
-  [3] Src [check_permission]: check_permission
+  [3] Src [canUpdateResource]: canUpdateResource
       PURITY: 100% pure
-  [4] Src [renderDashboard]: renderDashboard
+  [4] Src [response]: response
       PURITY: 100% pure
-  [5] Src [detect_duplicates]: detect_duplicates
+  [5] Src [collect_project_files]: collect_project_files
       PURITY: 100% pure
-  [6] Src [load_extension_list]: load_extension_list
+  [6] Src [parse_extensions]: parse_extensions
       PURITY: 100% pure
-  [7] Src [scan_project_files]: scan_project_files
+  [7] Src [parse_extensions]: parse_extensions
       PURITY: 100% pure
-  [8] Src [parse_extensions]: parse_extensions
+  [8] Src [CollectFiles]: CollectFiles
       PURITY: 100% pure
-  [9] Src [main]: main → _load_pass_generator
+  [9] Src [check_permission]: check_permission
       PURITY: 100% pure
-  [10] Src [generate_markdown_document]: generate_markdown_document → normalize_topic
+  [10] Src [check_permission]: check_permission
       PURITY: 100% pure
-  [11] Src [generate_markdown_document]: generate_markdown_document → normalize_topic
+  [11] Src [from_mapping]: from_mapping
       PURITY: 100% pure
-  [12] Src [__init__]: __init__
+  [12] Src [divide]: divide
       PURITY: 100% pure
-  [13] Src [_write_json]: _write_json
+  [13] Src [write_to_log]: write_to_log
       PURITY: 100% pure
-  [14] Src [do_GET]: do_GET → resolve_runtime_config → load_env_file
+  [14] Src [detect_duplicates]: detect_duplicates
       PURITY: 100% pure
-  [15] Src [do_POST]: do_POST → resolve_runtime_config → load_env_file
+  [15] Src [propose_ui_delta_contract_dicts]: propose_ui_delta_contract_dicts → propose_ui_delta_contracts → _ui_contract_line
       PURITY: 100% pure
-  [16] Src [main]: main
+  [16] Src [to_dict]: to_dict
       PURITY: 100% pure
-  [17] Src [fetchUserProfile]: fetchUserProfile
+  [17] Src [to_dict]: to_dict
       PURITY: 100% pure
-  [18] Src [divide]: divide
+  [18] Src [scan_project_files]: scan_project_files
       PURITY: 100% pure
-  [19] Src [write_to_log]: write_to_log
+  [19] Src [to_dict]: to_dict
       PURITY: 100% pure
-  [20] Src [main]: main → run_example_01 → validate_project → load_project_sources → ...(2 more)
+  [20] Src [to_dict]: to_dict
       PURITY: 100% pure
-  [21] Src [canUpdateResource]: canUpdateResource
+  [21] Src [to_mermaid]: to_mermaid → _safe
       PURITY: 100% pure
-  [22] Src [response]: response
+  [22] Src [to_inline]: to_inline
       PURITY: 100% pure
-  [23] Src [render_summary]: render_summary
+  [23] Src [contract]: contract
       PURITY: 100% pure
-  [24] Src [collect_project_files]: collect_project_files
+  [24] Src [validate_artifact_with_proposals]: validate_artifact_with_proposals → validate_proposal → extract_contract_records_from_text → parse_contract_line → ...(2 more)
       PURITY: 100% pure
-  [25] Src [parse_extensions]: parse_extensions
+  [25] Src [main]: main
       PURITY: 100% pure
-  [26] Src [CollectFiles]: CollectFiles
+  [26] Src [init]: init → create_sample_manifest
       PURITY: 100% pure
-  [27] Src [from_mapping]: from_mapping
+  [27] Src [scan]: scan → _print_scan_table
       PURITY: 100% pure
-  [28] Src [main]: main
+  [28] Src [validate]: validate → validate_project → load_project_sources → infer_artifact_kind → ...(1 more)
       PURITY: 100% pure
-  [29] Src [init]: init → create_sample_manifest
+  [29] Src [check]: check → load_config
       PURITY: 100% pure
-  [30] Src [scan]: scan → _print_scan_table
+  [30] Src [coverage]: coverage → calculate_coverage → load_project_sources → infer_artifact_kind → ...(1 more)
       PURITY: 100% pure
-  [31] Src [validate]: validate → validate_project → load_project_sources → infer_artifact_kind → ...(1 more)
+  [31] Src [duplicates]: duplicates → find_duplicate_contracts → load_project_sources → infer_artifact_kind → ...(1 more)
       PURITY: 100% pure
-  [32] Src [check]: check → load_config
+  [32] Src [graph]: graph → build_graph → load_project_sources → infer_artifact_kind → ...(1 more)
       PURITY: 100% pure
-  [33] Src [coverage]: coverage → calculate_coverage → load_project_sources → infer_artifact_kind → ...(1 more)
+  [33] Src [tickets]: tickets → validate_project → load_project_sources → infer_artifact_kind → ...(1 more)
       PURITY: 100% pure
-  [34] Src [duplicates]: duplicates → find_duplicate_contracts → load_project_sources → infer_artifact_kind → ...(1 more)
+  [34] Src [planfile_push]: planfile_push → validate_project → load_project_sources → infer_artifact_kind → ...(1 more)
       PURITY: 100% pure
-  [35] Src [graph]: graph → build_graph → load_project_sources → infer_artifact_kind → ...(1 more)
+  [35] Src [planfile_pull]: planfile_pull
       PURITY: 100% pure
-  [36] Src [tickets]: tickets → validate_project → load_project_sources → infer_artifact_kind → ...(1 more)
+  [36] Src [planfile_sync]: planfile_sync → validate_project → load_project_sources → infer_artifact_kind → ...(1 more)
       PURITY: 100% pure
-  [37] Src [planfile_push]: planfile_push → validate_project → load_project_sources → infer_artifact_kind → ...(1 more)
+  [37] Src [planfile_webhook_test]: planfile_webhook_test
       PURITY: 100% pure
-  [38] Src [planfile_pull]: planfile_pull
+  [38] Src [planfile_webhook_apply]: planfile_webhook_apply
       PURITY: 100% pure
-  [39] Src [planfile_sync]: planfile_sync → validate_project → load_project_sources → infer_artifact_kind → ...(1 more)
+  [39] Src [watch]: watch → validate_project → load_project_sources → infer_artifact_kind → ...(1 more)
       PURITY: 100% pure
-  [40] Src [planfile_webhook_test]: planfile_webhook_test
+  [40] Src [engine_suggest]: engine_suggest → scan_suggest_and_validate → collect_source_units → infer_language
       PURITY: 100% pure
-  [41] Src [planfile_webhook_apply]: planfile_webhook_apply
+  [41] Src [engine_drift]: engine_drift → scan_suggest_and_validate → collect_source_units → infer_language
       PURITY: 100% pure
-  [42] Src [watch]: watch → validate_project → load_project_sources → infer_artifact_kind → ...(1 more)
+  [42] Src [engine_run]: engine_run → scan_suggest_and_validate → collect_source_units → infer_language
       PURITY: 100% pure
-  [43] Src [engine_suggest]: engine_suggest → scan_suggest_and_validate → collect_source_units → infer_language
+  [43] Src [check_manifest]: check_manifest → validate_manifest → _load_manifest_data → _invalid_manifest_report → ...(1 more)
       PURITY: 100% pure
-  [44] Src [engine_drift]: engine_drift → scan_suggest_and_validate → collect_source_units → infer_language
+  [44] Src [artifact_validate]: artifact_validate → validate_artifact → validate_dockerfile
       PURITY: 100% pure
-  [45] Src [engine_run]: engine_run → scan_suggest_and_validate → collect_source_units → infer_language
+  [45] Src [propose_delta]: propose_delta → propose_ui_delta_contracts → _ui_contract_line
       PURITY: 100% pure
-  [46] Src [check_manifest]: check_manifest → validate_manifest → _load_manifest_data → _invalid_manifest_report → ...(1 more)
+  [46] Src [propose_llm_cmd]: propose_llm_cmd → propose_contracts_llm → _load_litellm_completion
       PURITY: 100% pure
-  [47] Src [artifact_validate]: artifact_validate → validate_artifact → validate_dockerfile
+  [47] Src [manifest_apply_ledger]: manifest_apply_ledger → apply_ledger_to_manifest → load_manifest_document
       PURITY: 100% pure
-  [48] Src [propose_delta]: propose_delta → propose_ui_delta_contracts → _ui_contract_line
+  [48] Src [to_dict]: to_dict
       PURITY: 100% pure
-  [49] Src [propose_llm_cmd]: propose_llm_cmd → propose_contracts_llm → _load_litellm_completion
+  [49] Src [to_dict]: to_dict
       PURITY: 100% pure
-  [50] Src [manifest_apply_ledger]: manifest_apply_ledger → apply_ledger_to_manifest → load_manifest_document
+  [50] Src [validate]: validate → contains_token_like → normalize_label
       PURITY: 100% pure
 
 LAYERS:
@@ -122,6 +122,8 @@ LAYERS:
   │ basic.ts                    13L  0C    0m  CC=0.0    ←0
   │ tsconfig.json               10L  0C    0m  CC=0.0    ←0
   │ Cargo.toml                   9L  0C    0m  CC=0.0    ←0
+  │ local.dev.txt                9L  0C    0m  CC=0.0    ←0
+  │ local.dev.txt                8L  0C    0m  CC=0.0    ←0
   │ intract.config.ts            8L  0C    0m  CC=0.0    ←0
   │
   src/                            CC̄=3.8    ←in:0  →out:0
@@ -142,15 +144,15 @@ LAYERS:
   │ planfile                   141L  2C    7m  CC=11     ←3
   │ grouping                   138L  2C    6m  CC=6      ←3
   │ artifact                   132L  2C    5m  CC=10     ←3
+  │ server                     125L  0C    5m  CC=6      ←0
   │ handlers                   124L  0C    9m  CC=4      ←0
   │ signatures                 122L  1C    8m  CC=3      ←8
-  │ server                     118L  0C    5m  CC=5      ←0
   │ manifest_schema            116L  2C    8m  CC=9      ←2
   │ vallm                      116L  2C    5m  CC=12     ←2
   │ drift                      113L  2C    5m  CC=5      ←1
   │ builtins                   111L  6C   11m  CC=3      ←0
-  │ base                       109L  6C   12m  CC=5      ←0
   │ assigner                   109L  0C    6m  CC=10     ←1
+  │ base                       109L  6C   12m  CC=5      ←0
   │ policy                     106L  1C    7m  CC=7      ←3
   │ proposals                  100L  1C    4m  CC=9      ←1
   │ cache                       99L  2C    7m  CC=4      ←0
@@ -243,17 +245,19 @@ LAYERS:
   │ dashboard.ts                 8L  0C    1m  CC=2      ←0
   │ scanner                      8L  0C    1m  CC=3      ←0
   │ app                          8L  0C    1m  CC=3      ←0
+  │ parse_extensions             8L  0C    1m  CC=3      ←0
   │ ScanPipeline.cs              7L  0C    1m  CC=1      ←0
   │ Dockerfile                   7L  0C    0m  CC=0.0    ←0
   │ run-demo.sh                  7L  0C    0m  CC=0.0    ←0
-  │ auth                         6L  0C    1m  CC=1      ←0
   │ permission.ts                6L  0C    3m  CC=1      ←0
-  │ auth                         5L  0C    1m  CC=2      ←0
+  │ auth                         6L  0C    1m  CC=1      ←0
   │ permission.ts                5L  0C    2m  CC=2      ←0
+  │ auth                         5L  0C    1m  CC=2      ←0
   │ Dockerfile                   5L  0C    0m  CC=0.0    ←0
-  │ routes                       4L  0C    1m  CC=1      ←0
   │ scanner                      4L  0C    1m  CC=1      ←0
+  │ routes                       4L  0C    1m  CC=1      ←0
   │ reporter                     4L  0C    1m  CC=1      ←0
+  │ routes                       4L  0C    1m  CC=1      ←0
   │ analyzer                     3L  0C    1m  CC=1      ←0
   │ parser_b                     3L  0C    1m  CC=1      ←0
   │ parser_a                     3L  0C    1m  CC=3      ←0
@@ -264,18 +268,20 @@ LAYERS:
   │ intract.tmLanguage.json     19L  0C    0m  CC=0.0    ←0
   │
   ./                              CC̄=0.0    ←in:0  →out:0
-  │ !! goal.yaml                  511L  0C    0m  CC=0.0    ←0
-  │ tree.txt                   314L  0C    0m  CC=0.0    ←0
+  │ !! goal.yaml                  529L  0C    0m  CC=0.0    ←0
+  │ dsl-manifest.json          150L  0C    0m  CC=0.0    ←0
   │ Makefile                   111L  0C    0m  CC=0.0    ←0
   │ pyproject.toml             101L  0C    0m  CC=0.0    ←0
   │ action.yml                  91L  0C    0m  CC=0.0    ←0
   │ project.sh                  50L  0C    0m  CC=0.0    ←0
   │ pyqual.yaml                 38L  0C    0m  CC=0.0    ←0
-  │ Dockerfile                   9L  0C    0m  CC=0.0    ←0
+  │ local.dev.txt               11L  0C    0m  CC=0.0    ←0
+  │ compose.yml                  7L  0C    0m  CC=0.0    ←0
+  │ Dockerfile.e2e               7L  0C    0m  CC=0.0    ←0
+  │ docker-compose.yml           7L  0C    0m  CC=0.0    ←0
+  │ compose.e2e.yml              7L  0C    0m  CC=0.0    ←0
   │ .pre-commit-hooks.yaml       6L  0C    0m  CC=0.0    ←0
-  │
-  schemas/                        CC̄=0.0    ←in:0  →out:0
-  │ intract.schema.json         99L  0C    0m  CC=0.0    ←0
+  │ tree.sh                      1L  0C    0m  CC=0.0    ←0
   │
   templates/                      CC̄=0.0    ←in:0  →out:0
   │ intract.yaml                36L  0C    0m  CC=0.0    ←0
@@ -283,6 +289,9 @@ LAYERS:
   │ pyproject-intract.toml      16L  0C    0m  CC=0.0    ←0
   │ Dockerfile.intract          12L  0C    0m  CC=0.0    ←0
   │ .pre-commit-config.yaml      9L  0C    0m  CC=0.0    ←0
+  │
+  schemas/                        CC̄=0.0    ←in:0  →out:0
+  │ intract.schema.json         99L  0C    0m  CC=0.0    ←0
   │
   testql-scenarios/               CC̄=0.0    ←in:0  →out:0
   │ generated-cli-tests.testql.toon.yaml    20L  0C    0m  CC=0.0    ←0

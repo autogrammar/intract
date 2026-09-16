@@ -1,16 +1,16 @@
 # System Architecture Analysis
-<!-- generated in 0.00s -->
+<!-- generated in 0.02s -->
 
 ## Overview
 
-- **Project**: /home/tom/github/semcod/intract
+- **Project**: /home/tom/github/autogrammar/intract
 - **Primary Language**: python
-- **Languages**: python: 101, yaml: 16, json: 11, typescript: 7, shell: 5
+- **Languages**: python: 103, yaml: 16, json: 12, typescript: 7, shell: 6
 - **Analysis Mode**: static
-- **Total Functions**: 474
+- **Total Functions**: 476
 - **Total Classes**: 81
-- **Modules**: 160
-- **Entry Points**: 202
+- **Modules**: 169
+- **Entry Points**: 204
 
 ## Architecture by Module
 
@@ -61,14 +61,14 @@
 - **Classes**: 4
 - **File**: `planfile_adapter.py`
 
+### src.intract.parsers.manifest
+- **Functions**: 12
+- **File**: `manifest.py`
+
 ### src.intract.plugins.base
 - **Functions**: 12
 - **Classes**: 6
 - **File**: `base.py`
-
-### src.intract.parsers.manifest
-- **Functions**: 12
-- **File**: `manifest.py`
 
 ### src.intract.plugins.builtins
 - **Functions**: 11
@@ -87,25 +87,25 @@
 - **Functions**: 8
 - **File**: `project.py`
 
-### src.intract.manifest_schema
-- **Functions**: 8
-- **Classes**: 2
-- **File**: `manifest_schema.py`
-
 ### src.intract.validators.input_output
 - **Functions**: 8
 - **Classes**: 3
 - **File**: `input_output.py`
+
+### src.intract.core.signatures
+- **Functions**: 8
+- **Classes**: 1
+- **File**: `signatures.py`
 
 ### src.intract.validators.registry
 - **Functions**: 8
 - **Classes**: 1
 - **File**: `registry.py`
 
-### src.intract.core.signatures
+### src.intract.manifest_schema
 - **Functions**: 8
-- **Classes**: 1
-- **File**: `signatures.py`
+- **Classes**: 2
+- **File**: `manifest_schema.py`
 
 ## Key Entry Points
 
@@ -119,12 +119,12 @@ Main execution flows into the system:
 > Merge evolved cinema ledger contracts into intract.yaml (by id).
 - **Calls**: manifest_app.command, typer.Option, typer.Option, typer.Option, typer.Option, typer.Option, typer.Option, typer.Option
 
-### examples.showcase.server.ShowcaseHandler.do_POST
-- **Calls**: examples.showcase.server.resolve_runtime_config, int, Request, self._write_json, self._write_json, self.headers.get, self.rfile.read, json.loads
-
 ### src.intract.cli.watch
 > Watch folder and re-validate Intract contracts when logical files change.
 - **Calls**: app.command, typer.Argument, typer.Option, typer.Option, typer.Option, typer.Option, typer.Option, console.print
+
+### examples.showcase.server.ShowcaseHandler.do_POST
+- **Calls**: examples.showcase.server.resolve_runtime_config, int, Request, self._write_json, self._write_json, self.headers.get, self.rfile.read, json.loads
 
 ### src.intract.config.IntractConfig.from_mapping
 - **Calls**: None.get, tool.get, plugins.get, cls, data.get, tool.get, data.get, str
@@ -158,12 +158,12 @@ Main execution flows into the system:
 > Apply Intract project policy for reDUP consumers (scan gates / CLI).
 - **Calls**: Path, src.intract.config.load_config, src.intract.integrations.redup._resolve_manifest_path, src.intract.project.validate_project, src.intract.policy.decide_policy, list, list, src.intract.integrations.redup._apply_duplicate_policy
 
+### src.intract.sdk.ContractBuilder.to_inline
+- **Calls**: parts.append, parts.append, parts.append, parts.append, parts.append, parts.append, parts.append, parts.append
+
 ### src.intract.cli.planfile_pull
 > Pull planfile tickets from API or local .intract export.
 - **Calls**: planfile_app.command, typer.Argument, typer.Option, typer.Option, typer.Option, typer.Option, PlanfileApiAdapter, adapter.pull
-
-### src.intract.sdk.ContractBuilder.to_inline
-- **Calls**: parts.append, parts.append, parts.append, parts.append, parts.append, parts.append, parts.append, parts.append
 
 ### src.intract.plugins.manager.discover_plugins
 - **Calls**: entry_points, eps.select, eps.select, eps.select, eps.select, src.intract.plugins.manager.load_builtin_plugins, PluginRegistry, src.intract.plugins.manager._register_unique
@@ -174,15 +174,15 @@ Main execution flows into the system:
 ### src.intract.integrations.planfile_adapter.PlanfileApiAdapter.push
 - **Calls**: self.export_local, self._request, PlanfileSyncResult, PlanfileSyncResult, self._endpoint, self._webhook_label, self._webhook_label, asdict
 
-### examples.markdown-generator.demo.main
-- **Calls**: examples.markdown-generator.demo._load_pass_generator, generator.generate_markdown_document, generator.guard_markdown_contract, examples.markdown-generator.demo._validate_project, examples.markdown-generator.demo._validate_project, print, print, print
-
 ### src.intract.cli.planfile_push
 > Export validation tickets locally and optionally push to a planfile API.
 - **Calls**: planfile_app.command, typer.Argument, typer.Option, typer.Option, typer.Option, typer.Option, src.intract.project.validate_project, PlanfileApiAdapter
 
+### examples.markdown-generator.demo.main
+- **Calls**: examples.markdown-generator.demo._load_pass_generator, generator.generate_markdown_document, generator.guard_markdown_contract, examples.markdown-generator.demo._validate_project, examples.markdown-generator.demo._validate_project, print, print, print
+
 ### src.intract.mcp.server.run_server
-- **Calls**: print, print, line.strip, json.loads, src.intract.mcp.server.handle_request, print, None.join, json.dumps
+- **Calls**: print, print, line.strip, json.loads, src.intract.mcp.server.handle_request, None.join, print, print
 
 ### scripts.generate_toon_from_map.main
 - **Calls**: scripts.generate_toon_from_map._build_parser, parser.parse_args, scripts.generate_toon_from_map._ensure_parent, args.output_file.write_text, print, args.map_file.exists, print, scripts.generate_toon_from_map.generate_toon_lines
@@ -232,16 +232,16 @@ check [src.intract.cli]
 manifest_apply_ledger [src.intract.cli]
 ```
 
-### Flow 3: do_POST
+### Flow 3: watch
+```
+watch [src.intract.cli]
+```
+
+### Flow 4: do_POST
 ```
 do_POST [examples.showcase.server.ShowcaseHandler]
   └─ →> resolve_runtime_config
       └─> load_env_file
-```
-
-### Flow 4: watch
-```
-watch [src.intract.cli]
 ```
 
 ### Flow 5: from_mapping
@@ -346,24 +346,9 @@ This cache stores
 - **Methods**: 2
 - **Key Methods**: src.intract.validators.input_output.ReturnValueRule.supports, src.intract.validators.input_output.ReturnValueRule.validate
 
-### src.intract.validators.base.ValidationRule
-- **Methods**: 2
-- **Key Methods**: src.intract.validators.base.ValidationRule.supports, src.intract.validators.base.ValidationRule.validate
-- **Inherits**: Protocol
-
 ### src.intract.validators.effects.NoForbiddenEffectRule
 - **Methods**: 2
 - **Key Methods**: src.intract.validators.effects.NoForbiddenEffectRule.supports, src.intract.validators.effects.NoForbiddenEffectRule.validate
-
-### src.intract.plugins.base.ParserPlugin
-- **Methods**: 2
-- **Key Methods**: src.intract.plugins.base.ParserPlugin.supports, src.intract.plugins.base.ParserPlugin.parse
-- **Inherits**: Protocol
-
-### src.intract.plugins.base.ValidatorPlugin
-- **Methods**: 2
-- **Key Methods**: src.intract.plugins.base.ValidatorPlugin.supports, src.intract.plugins.base.ValidatorPlugin.validate
-- **Inherits**: Protocol
 
 ### src.intract.plugins.builtins.InlineContractParserPlugin
 - **Methods**: 2
@@ -377,29 +362,27 @@ This cache stores
 - **Methods**: 2
 - **Key Methods**: src.intract.plugins.builtins.ManifestParserPlugin.supports, src.intract.plugins.builtins.ManifestParserPlugin.parse
 
+### src.intract.plugins.builtins.BasicContractValidatorPlugin
+- **Methods**: 2
+- **Key Methods**: src.intract.plugins.builtins.BasicContractValidatorPlugin.supports, src.intract.plugins.builtins.BasicContractValidatorPlugin.validate
+
+### src.intract.plugins.builtins.ArtifactStructureValidatorPlugin
+- **Methods**: 2
+- **Key Methods**: src.intract.plugins.builtins.ArtifactStructureValidatorPlugin.supports, src.intract.plugins.builtins.ArtifactStructureValidatorPlugin.validate
+
+### sdks.java.src.main.java.io.intract.sdk.IntractContract.IntractContract
+- **Methods**: 2
+- **Key Methods**: sdks.java.src.main.java.io.intract.sdk.IntractContract.IntractContract.inline, sdks.java.src.main.java.io.intract.sdk.IntractContract.IntractContract.join
+
 ## Data Transformation Functions
 
 Key functions that process and transform data:
 
-### examples.full-stack.src.parser_a.parse_extensions
-- **Output to**: item.strip, raw.split, item.strip
-
-### examples.markdown-generator.demo._validate_project
-- **Output to**: src.intract.project.validate_project, str, sys.path.insert, str
-
 ### examples.integration_tests.01_python_pass.app.parse_extensions
 - **Output to**: None.lower, raw_extensions.split, item.strip, item.strip
 
-### src.intract.cli.validate
-> Validate project contracts.
-- **Output to**: app.command, typer.Argument, typer.Option, typer.Option, typer.Option
-
-### src.intract.cli._format_check_text
-- **Output to**: lines.append, lines.append, lines.append, lines.append, lines.append
-
-### src.intract.cli.artifact_validate
-> Validate a non-code artifact: OpenAPI, Dockerfile, GitHub Actions or Kubernetes.
-- **Output to**: app.command, typer.Argument, typer.Option, src.intract.validators.artifacts.validate_artifact, console.print
+### examples.python.parse_extensions.parse_extensions
+- **Output to**: None.lower, raw_extensions.split, item.strip, item.strip
 
 ### src.intract.project._validate_observed_signatures
 - **Output to**: src.intract.validators.engine.validate_contract_against_source, sources.get
@@ -425,14 +408,31 @@ Key functions that process and transform data:
 ### src.intract.check.validate_selected_paths
 - **Output to**: src.intract.check.load_selected_sources, src.intract.project.validate_sources, src.intract.project.validate_project, Path, manifest_path.exists
 
-### src.intract.manifest_schema.validate_manifest
-- **Output to**: Path, src.intract.manifest_schema._load_manifest_data, src.intract.manifest_schema._jsonschema_issues, src.intract.manifest_schema._manifest_report, manifest_path.exists
-
 ### src.intract.validate_snippet.validate_artifact_with_proposals
 > Validate an HTML/code artifact together with proposed contract lines.
 
 Proposed lines are injected a
 - **Output to**: src.intract.integrations.vallm.validate_proposal, mapped.to_dict, None.strip, header_lines.append, None.join
+
+### src.intract.cli.validate
+> Validate project contracts.
+- **Output to**: app.command, typer.Argument, typer.Option, typer.Option, typer.Option
+
+### src.intract.cli._format_check_text
+- **Output to**: lines.append, lines.append, lines.append, lines.append, lines.append
+
+### src.intract.cli.artifact_validate
+> Validate a non-code artifact: OpenAPI, Dockerfile, GitHub Actions or Kubernetes.
+- **Output to**: app.command, typer.Argument, typer.Option, src.intract.validators.artifacts.validate_artifact, console.print
+
+### src.intract.validators.input_output.InputPresenceRule.validate
+- **Output to**: sorted, RuleResult, src.intract.validators.input_output.contains_token_like, set, len
+
+### src.intract.validators.input_output.OutputPresenceRule.validate
+- **Output to**: sorted, RuleResult, src.intract.validators.input_output.contains_token_like, set, len
+
+### src.intract.validators.input_output.ReturnValueRule.validate
+- **Output to**: src.intract.validators.input_output.has_return_value, RuleResult
 
 ### src.intract.validators.artifacts.validate_openapi
 - **Output to**: src.intract.parsers.openapi.parse_openapi_contracts, None.lower, ArtifactValidationReport, src.intract.core.signatures.build_signature, record.owner.lower
@@ -449,17 +449,14 @@ Proposed lines are injected a
 ### src.intract.validators.artifacts.validate_artifact
 - **Output to**: Path, p.name.lower, p.read_text, ArtifactValidationReport, name.startswith
 
+### src.intract.validators.requirements.validate_required_contracts
+- **Output to**: sorted, sorted
+
+### src.intract.validators.effects.NoForbiddenEffectRule.validate
+- **Output to**: src.intract.validators.effects.detect_effects, sorted, RuleResult, ValidationIssue, sorted
+
 ### src.intract.validators.engine.validate_contract_against_source
 - **Output to**: ValidationContext, rule_registry.run, src.intract.validators.base.merge_rule_results, rule_registry.summarize, ValidationResult
-
-### src.intract.validators.input_output.InputPresenceRule.validate
-- **Output to**: sorted, RuleResult, src.intract.validators.input_output.contains_token_like, set, len
-
-### src.intract.validators.input_output.OutputPresenceRule.validate
-- **Output to**: sorted, RuleResult, src.intract.validators.input_output.contains_token_like, set, len
-
-### src.intract.validators.input_output.ReturnValueRule.validate
-- **Output to**: src.intract.validators.input_output.has_return_value, RuleResult
 
 ## Public API Surface
 
@@ -468,8 +465,8 @@ Functions exposed as public API (no underscore prefix):
 - `src.intract.parsers.manifest.contract_from_mapping` - 59 calls
 - `src.intract.cli.check` - 32 calls
 - `src.intract.cli.manifest_apply_ledger` - 30 calls
-- `examples.showcase.server.ShowcaseHandler.do_POST` - 28 calls
 - `src.intract.cli.watch` - 28 calls
+- `examples.showcase.server.ShowcaseHandler.do_POST` - 28 calls
 - `src.intract.config.IntractConfig.from_mapping` - 23 calls
 - `scripts.generate_toon_from_map.generate_toon_lines` - 23 calls
 - `src.intract.cli.engine_drift` - 21 calls
@@ -479,32 +476,32 @@ Functions exposed as public API (no underscore prefix):
 - `src.intract.cli.engine_run` - 20 calls
 - `src.intract.parsers.inline.clean_comment_line` - 20 calls
 - `src.intract.reporters.sarif.report_to_sarif` - 19 calls
-- `src.intract.cli.engine_suggest` - 18 calls
 - `src.intract.graph.build_graph` - 18 calls
-- `examples.integration_tests.run_examples.run_example_03` - 17 calls
+- `src.intract.cli.engine_suggest` - 18 calls
 - `src.intract.cli.duplicates` - 17 calls
 - `src.intract.validators.artifacts.validate_artifact` - 17 calls
+- `examples.integration_tests.run_examples.run_example_03` - 17 calls
 - `src.intract.engine.analyzer.analyze_source_units` - 17 calls
+- `src.intract.check.parse_unified_diff_hunks` - 16 calls
 - `src.intract.cli.graph` - 16 calls
 - `src.intract.cli.propose_llm_cmd` - 16 calls
-- `src.intract.check.parse_unified_diff_hunks` - 16 calls
-- `src.intract.duplicates.grouping.pairs_to_intent_groups` - 16 calls
 - `src.intract.validators.artifacts.validate_openapi` - 16 calls
 - `src.intract.core.normalizer.normalize_label` - 16 calls
+- `src.intract.duplicates.grouping.pairs_to_intent_groups` - 16 calls
 - `src.intract.parsers.openapi.parse_openapi_contracts` - 16 calls
 - `src.intract.integrations.redup.validate_for_redup` - 16 calls
-- `src.intract.cli.planfile_pull` - 15 calls
 - `src.intract.check.validate_sources_for_hunks` - 15 calls
 - `src.intract.sdk.ContractBuilder.to_inline` - 15 calls
+- `src.intract.cli.planfile_pull` - 15 calls
 - `src.intract.plugins.manager.discover_plugins` - 15 calls
 - `src.intract.integrations.planfile_adapter.PlanfileApiAdapter.push` - 15 calls
-- `examples.markdown-generator.demo.main` - 14 calls
 - `src.intract.config.load_config` - 14 calls
-- `src.intract.cli.planfile_push` - 14 calls
 - `src.intract.proposals.propose_ui_delta_contracts` - 14 calls
 - `src.intract.coverage.calculate_coverage` - 14 calls
 - `src.intract.duplicates.scoring.score_similarity` - 14 calls
+- `src.intract.cli.planfile_push` - 14 calls
 - `src.intract.validators.artifacts.validate_dockerfile` - 14 calls
+- `src.intract.validators.engine.validate_contract_against_source` - 14 calls
 
 ## System Interactions
 
@@ -517,13 +514,13 @@ graph TD
     check --> Option
     manifest_apply_ledge --> command
     manifest_apply_ledge --> Option
+    watch --> command
+    watch --> Argument
+    watch --> Option
     do_POST --> resolve_runtime_conf
     do_POST --> int
     do_POST --> Request
     do_POST --> _write_json
-    watch --> command
-    watch --> Argument
-    watch --> Option
     from_mapping --> get
     from_mapping --> cls
     engine_drift --> command

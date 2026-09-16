@@ -49,7 +49,16 @@
           "project/readme.sh",
           "project/TICKETS.md",
           "project/ticket-*/**",
-          "project.bat"
+          "project.bat",
+          "project/*.md",
+          "project/*.txt",
+          "project/*.yaml",
+          "project/*.mmd",
+          "project/*.png",
+          "project/*.html",
+          "project/mermaid.export",
+          ".env.example",
+          ".github/workflows/planfile-github-sync.yml"
         ]
       },
       "integration": {
