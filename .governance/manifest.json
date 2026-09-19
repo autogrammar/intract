@@ -14,12 +14,11 @@
   "coordination": {
     "integration": {
       "requiredForPaths": [
-        "pyproject.toml",
         "dsl-manifest.json"
       ],
       "workstream": "integration"
     },
-    "maxActiveTicketsPerWorkstream": 4,
+    "maxActiveTicketsPerWorkstream": 3,
     "mode": "workstreams",
     "rejectActiveScopeOverlap": true,
     "workstreams": {
@@ -58,7 +57,21 @@
           "project/*.html",
           "project/mermaid.export",
           ".env.example",
-          ".github/workflows/planfile-github-sync.yml"
+          ".github/workflows/planfile-github-sync.yml",
+          ".subactor/**",
+          "CLAUDE.md",
+          "GEMINI.md",
+          "pyproject.toml",
+          "package.json",
+          "worktree-guard.yaml",
+          "wellmanifest_governance.py",
+          "scripts/**",
+          ".cursor/**",
+          ".gitattributes",
+          ".aider.conf.yml",
+          ".githooks/**",
+          ".github/**",
+          "project.sh"
         ]
       },
       "integration": {
@@ -83,7 +96,14 @@
       "pyproject.toml",
       "go.mod",
       "Cargo.toml",
-      "pom.xml"
+      "pom.xml",
+      "package-lock.json",
+      "pnpm-lock.yaml",
+      "yarn.lock",
+      "uv.lock",
+      "poetry.lock",
+      "go.sum",
+      "Cargo.lock"
     ],
     "maxActiveMinutes": 120,
     "maxAffectedComponents": 5,
@@ -169,7 +189,7 @@
   ],
   "standard": {
     "id": "wellmanifest/new-project",
-    "version": "0.20.32"
+    "version": "0.20.35"
   },
   "ticket": {
     "activeStatuses": [
