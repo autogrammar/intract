@@ -116,15 +116,10 @@ def _scan_inline_records(path: Path):
     return records
 
 
-def _scan_row(record) -> dict[str, object]:
-    return {
-        "file": record.file_path,
-        "line": record.start_line,
-        "scope": record.contract.scope,
-        "intent": record.contract.key,
-        "priority": record.contract.priority,
-        "domain": record.contract.domain,
-    }
+def _scan_row(record, *, source_text: str | None = None) -> dict[str, object]:
+    from .scan_artifacts import build_intent_scan_row
+
+    return build_intent_scan_row(record, source_text=source_text, basis="declared")
 
 
 def _print_scan_table(data: list[dict[str, object]]) -> None:
@@ -152,18 +147,36 @@ def scan(
     path: Path = typer.Argument(Path(".")),
     json_output: bool = typer.Option(False, "--json"),
     all_artifacts: bool = typer.Option(False, "--all-artifacts", help="Also scan and validate non-code artifacts."),
+    envelope: bool = typer.Option(False, "--envelope", help="Emit versioned intract.scan/v1 envelope with coverage and source bindings."),
+    include_inferred: bool = typer.Option(False, "--include-inferred", help="Include inferred contracts for unbound fragments."),
+    fail_on_forbidden: bool = typer.Option(False, "--fail-on-forbidden-effects", help="Fail closed when any contract violates forbidden effects."),
+    output: Path | None = typer.Option(None, "--output", "-o", help="Write scan JSON output to file."),
 ):
     """Scan files for inline @intract contracts."""
     if all_artifacts:
         _scan_artifacts(path, json_output=json_output)
         return
 
-    data = [_scan_row(record) for record in _scan_inline_records(path)]
-    if json_output:
-        console.print_json(json.dumps(data, ensure_ascii=False))
+    from .scan_artifacts import build_intent_scan_artifact
+
+    artifact = build_intent_scan_artifact(
+        path,
+        include_inferred=include_inferred,
+        fail_on_forbidden_effects=False,
+    )
+    payload: object = artifact.to_dict() if envelope else artifact.rows
+    if output is not None:
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
+    if json_output or envelope:
+        console.print_json(json.dumps(payload, ensure_ascii=False))
+        if fail_on_forbidden and artifact.failed_closed:
+            raise typer.Exit(1)
         return
 
-    _print_scan_table(data)
+    _print_scan_table(artifact.rows)
+    if fail_on_forbidden and artifact.failed_closed:
+        raise typer.Exit(1)
 
 
 @app.command()
